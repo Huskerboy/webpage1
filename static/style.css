@@ -1,0 +1,23 @@
+body {
+        background: linear-gradient(to right, #E5E5BE, #003973);
+}
+nav {
+        margin-left: 7px; margin-top: 7px; margin-right: 7px;
+}
+H1 {
+   font-family: 'Times New Roman';
+   font-size: 36px;
+   color: orange;
+}
+
+H2 {
+   font-family: arial,verdana,sans-serif;
+   font-size: 20px;
+   color: black;
+}
+
+P {
+   font-family: arial,verdana,sans-serif;
+   font-size: 16px;
+   color: navy;
+}
