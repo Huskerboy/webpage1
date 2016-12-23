@@ -5,24 +5,18 @@
 
 <h1>Welcome to Ride the Bus</h1>
 
-<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-  <div class="panel panel-default">
-    <div class="panel-heading" role="tab" id="headingOne">
-      <h4 class="panel-title">
-        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-          Click to expand the rules
-        </a>
-      </h4>
-    </div>
-    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-      <div class="panel-body">
-        The rules of the game are quite simple. You will be making a series of guesses (4 in total). If you guess right, then you move on to the next part of the challenge, if you guess it wrong then
-          you will drink. There are a few certain instances where you can get 'screwed' and you have to drink twice. It should also be noted that if you guess wrong, you must go back and start over
-          at the beginning.
-      </div>
-    </div>
+<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+  Click to expand the rules
+</button>
+<div class="collapse" id="collapseExample">
+  <div class="well">
+    The rules of the game are quite simple. You will be making a series of guesses (4 in total). If you guess right, then you move on to the next part of the challenge, if you guess it wrong then
+        you will drink. There are a few certain instances where you can get 'screwed' and you have to drink twice. It should also be noted that if you guess wrong, you must go back and start over
+        at the beginning.
   </div>
 </div>
+
+
 
 <h4>For the first matter of business. You need to guess if the first card is going to be red or black (the suit color).</h4>
 
@@ -38,7 +32,7 @@
   <div class="col-xs-6 col-md-4">So the card will appear facedown, and after you guess it will be flipped.</div>
   <div class="col-xs-6 col-md-4">
     <div class="card">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Playing_card_spade_A.svg/2000px-Playing_card_spade_A.svg.png" alt="Card" style="width:150px;height:150px; margin-left:7px;">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Playing_card_spade_A.svg/2000px-Playing_card_spade_A.svg.png" alt="Card" style="width:150px;height:150px; margin-left:25px;">
       <div class="container">
         <h4><b>Ace Spades</b></h4>
       </div>
@@ -119,17 +113,139 @@
 
 <div class="alert alert-success alert-dismissible" role="alert">
   <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-  <strong>Winner</strong> Atta boy (of girl)!!! Thats two in a row.
+  <strong>Winner</strong> Atta boy (or girl)!!! Thats two in a row.
 </div>
 <div class="alert alert-danger alert-dismissible" role="alert">
   <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
   <strong>Wrong</strong>Good thing i'm not paying you to win, because you got that one wrong.
 </div>
+<div class="alert alert-danger alert-dismissible" role="alert">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <strong>Double Wrong!!!</strong>Wow, now that sucks, since it was the same value as the first you must drink twice and restart.
+</div>
 
 
+<h4>Okay, so now it is time to guess whether you believe the third card is in between or outside of the previous two card values.</h4>
+
+<div class="row">
+  <div class="col-xs-6 col-sm-3">
+    <div class="card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Playing_card_spade_A.svg/2000px-Playing_card_spade_A.svg.png" alt="Card" style="width:150px;height:150px; margin-left:7px;">
+      <div class="container">
+        <h4><b>Ace Spades</b></h4>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-6 col-sm-3">
+    <div class="card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Playing_card_heart_2.svg/480px-Playing_card_heart_2.svg.png" alt="Card" style="width:150px;height:150px; margin-left:7px;">
+      <div class="container">
+        <h4><b>Two of Hearts</b></h4>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-6 col-sm-3">
+    <div class="card">
+      <img src="http://www.djmcadam.com/images/bicycleback01.jpg" alt="Card" style="width:150px;height:150px; margin-left:7px;">
+      <div class="container">
+        <h4><b>Guess Inside or Outside</b></h4>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-6 col-sm-3">
+    <div class="card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Poker-sm-234-Jd.png" alt="Card" style="width:150px;height:150px; margin-left:7px;">
+      <div class="container">
+        <h4><b>Jack of Diamonds</b></h4>
+      </div>
+    </div>
+  </div>
+</div>
 
 
+<div class="row">
+  <div class="col-xs-6 col-md-4" style="margin-left:985px;">
+    <div class="btn-group" role="group" aria-label="...">
+      <button type="button" class="btn btn-danger">Inside</button>
+      <button type="button" class="btn btn-success">Outside</button>
+    </div>
+  </div>
+</div>
 
+
+<div class="alert alert-success alert-dismissible" role="alert">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <strong>Winner</strong> Atta boy (or girl)!!! Thats two in a row.
+</div>
+<div class="alert alert-danger alert-dismissible" role="alert">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <strong>Wrong</strong>Good thing i'm not paying you to win, because you got that one wrong.
+</div>
+<div class="alert alert-danger alert-dismissible" role="alert">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <strong>Double Wrong!!!</strong>Wow, now that sucks, since it was the same value as the first you must drink twice and restart.
+</div>
+
+
+<h4>Your finally here, the final test, which also happens to be the hardest. Guess the Suit of the fourth and final card</h4>
+
+
+<div class="row">
+  <div class="col-xs-6 col-sm-3">
+    <div class="card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Playing_card_spade_A.svg/2000px-Playing_card_spade_A.svg.png" alt="Card" style="width:150px;height:150px; margin-left:7px;">
+      <div class="container">
+        <h4><b>Ace Spades</b></h4>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-6 col-sm-3">
+    <div class="card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Playing_card_heart_2.svg/480px-Playing_card_heart_2.svg.png" alt="Card" style="width:150px;height:150px; margin-left:7px;">
+      <div class="container">
+        <h4><b>Two of Hearts</b></h4>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-6 col-sm-3">
+    <div class="card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Poker-sm-234-Jd.png" alt="Card" style="width:150px;height:150px; margin-left:7px;">
+      <div class="container">
+        <h4><b>Jack of Diamonds</b></h4>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-6 col-sm-3">
+    <div class="card">
+      <img src="http://www.djmcadam.com/images/bicycleback01.jpg" alt="Card" style="width:150px;height:150px; margin-left:7px;">
+      <div class="container">
+        <h4><b>Guess the suit</b></h4>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-xs-6 col-md-4" style="margin-left:1380px;">
+    <div class="btn-group" role="group" aria-label="...">
+      <button type="button" class="btn btn-danger">Diamonds</button>
+      <button type="button" class="btn btn-danger">Hearts</button>
+      <button type="button" class="btn btn-success">Spades</button>
+      <button type="button" class="btn btn-success">Clubs</button>
+    </div>
+  </div>
+</div>
+
+
+<div class="alert alert-success alert-dismissible" role="alert">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <strong>Winner Winner Chicken Dinner!!!!</strong> Congrats, you have won the game and are now off the bus.
+</div>
+<div class="alert alert-danger alert-dismissible" role="alert">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <strong>OUCH!!!</strong>So close but yet so far.
+</div>
 
 
 {% endblock %}

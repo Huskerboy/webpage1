@@ -41,7 +41,7 @@ img {
     padding: 2px 16px;
 }
 
-.panel-group .panel-default .panel-heading {
+.collapse .well {
   background-color: black
 }
 
