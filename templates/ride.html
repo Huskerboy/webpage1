@@ -1,8 +1,49 @@
 {% extends "base.html" %}
 
+
 {% block content %}
 
 <h1>Welcome to Ride the Bus</h1>
+
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingOne">
+      <h4 class="panel-title">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          Click to expand the rules
+        </a>
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+      <div class="panel-body">
+        The rules of the game are quite simple. You will be making a series of guesses (4 in total). If you guess right, then you move on to the next part of the challenge, if you guess it wrong then
+          you will drink. There are a few certain instances where you can get 'screwed' and you have to drink twice. It should also be noted that if you guess wrong, you must go back and start over
+          at the beginning.
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="card">
+  <img src="http://i156.photobucket.com/albums/t14/alexinphx/AceofSpades.png" alt="Card" style="width:150px;height:150px; margin-left:12px;">
+  <div class="container">
+      <h4><b>Ace Spades</b></h4>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
 
 {% endblock %}
 
