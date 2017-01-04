@@ -21,35 +21,27 @@
 <h4>For the first matter of business. You need to guess if the first card is going to be red or black (the suit color).</h4>
 
 <div class="row">
-  <div class="col-xs-6 col-md-4">
-    <div class="card">
-      <img src="http://www.djmcadam.com/images/bicycleback01.jpg" alt="Card" style=style="width:100%">
-      <div class="container">
-        <h4><b>Guess the color</b></h4>
+  <div class="col-md-12">
+      <div class="card-row">
+        <div class="card">
+          <img src="{{ url_for('static', filename='images/backcard.png')}}" alt="Card" width="200">
+          <div class="card_container">
+          <h4><b>Guess the color</b></h4>
+              <div class="btn-group" role="group" aria-label="...">
+                  <button type="button" class="btn btn-danger">Red</button>
+                  <button type="button" class="btn my-btn">Black</button>
+              </div>
+          </div>
+        </div>
+        <div class="card">
+            <img src="{{ url_for('static', filename='images/AS.png')}}" alt="Card" width="200">
+            <div class="card_container">
+            <h4><b>Ace Spades</b></h4>
+            </div>
+        </div>
       </div>
-    </div>
-  </div>
-  <div class="col-xs-6 col-md-4">So the card will appear facedown, and after you guess it will be flipped.</div>
-  <div class="col-xs-6 col-md-4">
-    <div class="card">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Playing_card_spade_A.svg/2000px-Playing_card_spade_A.svg.png" alt="Card" style="width:100%">
-      <div class="container">
-        <h4><b>Ace Spades</b></h4>
-      </div>
-    </div>
   </div>
 </div>
-
-
-<div class="row">
-<div class="col-xs-6 col-md-4" style="margin-left:25px;">
-  <div class="btn-group" role="group" aria-label="...">
-    <button type="button" class="btn btn-danger">Red</button>
-    <button type="button" class="btn btn-success">Black</button>
-  </div>
-</div>
-</div>
-
 
 
 <div class="alert alert-success alert-dismissible" role="alert">
@@ -66,48 +58,32 @@
 
 
 <div class="row">
-  <div class="col-xs-6 col-sm-3">
-    <div class="card">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Playing_card_spade_A.svg/2000px-Playing_card_spade_A.svg.png" alt="Card" style="width:100%">
-      <div class="container">
-        <h4><b>Ace Spades</b></h4>
+  <div class="col-md-12">
+      <div class="card-row">
+        <div class="card">
+            <img src="{{ url_for('static', filename='images/AS.png')}}" alt="Card" width="200">
+            <div class="card_container">
+            <h4><b>Ace Spades</b></h4>
+            </div>
+        </div>
+        <div class="card">
+          <img src="{{ url_for('static', filename='images/backcard.png')}}" alt="Card" width="200">
+          <div class="card_container">
+          <h4><b>Guess the color</b></h4>
+              <div class="btn-group" role="group" aria-label="...">
+                  <button type="button" class="btn btn-danger">High</button>
+                  <button type="button" class="btn btn-success">Low</button>
+              </div>
+          </div>
+        </div>
+        <div class="card">
+          <img src="{{ url_for('static', filename='images/2H.png')}}" alt="Card" width="200">
+          <div class="card_container">
+          <h4><b>Two of Hearts</b></h4>
+          </div>
+        </div>
       </div>
-    </div>
   </div>
-  <div class="col-xs-6 col-sm-3">
-    <div class="card">
-      <img src="http://www.djmcadam.com/images/bicycleback01.jpg" alt="Card" style="width:100%">
-      <div class="container">
-        <h4><b>Guess High or Low</b></h4>
-      </div>
-    </div>
-  </div>
-  <div class="col-xs-6 col-sm-3">
-    <div class="card">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Playing_card_spade_A.svg/2000px-Playing_card_spade_A.svg.png" alt="Card" style="width:150px;height:150px; margin-left:7px;">
-      <div class="container">
-        <h4><b>Ace Spades</b></h4>
-      </div>
-    </div>
-  </div>
-  <div class="col-xs-6 col-sm-3">
-    <div class="card">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Playing_card_heart_2.svg/480px-Playing_card_heart_2.svg.png" alt="Card" style="width:150px;height:150px; margin-left:7px;">
-      <div class="container">
-        <h4><b>Two of Hearts</b></h4>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<div class="row">
-<div class="col-xs-6 col-md-4" style="margin-left:510px;">
-  <div class="btn-group" role="group" aria-label="...">
-    <button type="button" class="btn btn-danger">High</button>
-    <button type="button" class="btn btn-success">Low</button>
-  </div>
-</div>
 </div>
 
 
@@ -128,47 +104,37 @@
 <h4>Okay, so now it is time to guess whether you believe the third card is in between or outside of the previous two card values.</h4>
 
 <div class="row">
-  <div class="col-xs-6 col-sm-3">
-    <div class="card">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Playing_card_spade_A.svg/2000px-Playing_card_spade_A.svg.png" alt="Card" style="width:150px;height:150px; margin-left:7px;">
-      <div class="container">
-        <h4><b>Ace Spades</b></h4>
+  <div class="col-md-12">
+      <div class="card-row">
+        <div class="card">
+            <img src="{{ url_for('static', filename='images/AS.png')}}" alt="Card" width="200">
+            <div class="card_container">
+            <h4><b>Ace Spades</b></h4>
+            </div>
+        </div>
+        <div class="card">
+          <img src="{{ url_for('static', filename='images/2H.png')}}" alt="Card" width="200">
+          <div class="card_container">
+          <h4><b>Two of Hearts</b></h4>
+          </div>
+        </div>
+        <div class="card">
+          <img src="{{ url_for('static', filename='images/backcard.png')}}" alt="Card" width="200">
+          <div class="card_container">
+          <h4><b>Guess the color</b></h4>
+              <div class="btn-group" role="group" aria-label="...">
+                  <button type="button" class="btn btn-danger">Inside</button>
+                  <button type="button" class="btn btn-success">Outside</button>
+              </div>
+          </div>
+        </div>
+        <div class="card">
+          <img src="{{ url_for('static', filename='images/JD.png')}}" alt="Card" width="200">
+          <div class="card_container">
+          <h4><b>Jack of Diamonds</b></h4>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-  <div class="col-xs-6 col-sm-3">
-    <div class="card">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Playing_card_heart_2.svg/480px-Playing_card_heart_2.svg.png" alt="Card" style="width:150px;height:150px; margin-left:7px;">
-      <div class="container">
-        <h4><b>Two of Hearts</b></h4>
-      </div>
-    </div>
-  </div>
-  <div class="col-xs-6 col-sm-3">
-    <div class="card">
-      <img src="http://www.djmcadam.com/images/bicycleback01.jpg" alt="Card" style="width:150px;height:150px; margin-left:7px;">
-      <div class="container">
-        <h4><b>Guess Inside or Outside</b></h4>
-      </div>
-    </div>
-  </div>
-  <div class="col-xs-6 col-sm-3">
-    <div class="card">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Poker-sm-234-Jd.png" alt="Card" style="width:150px;height:150px; margin-left:7px;">
-      <div class="container">
-        <h4><b>Jack of Diamonds</b></h4>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<div class="row">
-  <div class="col-xs-6 col-md-4" style="margin-left:985px;">
-    <div class="btn-group" role="group" aria-label="...">
-      <button type="button" class="btn btn-danger">Inside</button>
-      <button type="button" class="btn btn-success">Outside</button>
-    </div>
   </div>
 </div>
 
@@ -191,49 +157,39 @@
 
 
 <div class="row">
-  <div class="col-xs-6 col-sm-3">
-    <div class="card">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Playing_card_spade_A.svg/2000px-Playing_card_spade_A.svg.png" alt="Card" style="width:150px;height:150px; margin-left:7px;">
-      <div class="container">
-        <h4><b>Ace Spades</b></h4>
+  <div class="col-md-12">
+      <div class="card-row">
+        <div class="card">
+            <img src="{{ url_for('static', filename='images/AS.png')}}" alt="Card" width="200">
+            <div class="card_container">
+            <h4><b>Ace Spades</b></h4>
+            </div>
+        </div>
+        <div class="card">
+          <img src="{{ url_for('static', filename='images/2H.png')}}" alt="Card" width="200">
+          <div class="card_container">
+          <h4><b>Two of Hearts</b></h4>
+          </div>
+        </div>
+        <div class="card">
+          <img src="{{ url_for('static', filename='images/JD.png')}}" alt="Card" width="200">
+          <div class="card_container">
+          <h4><b>Jack of Diamonds</b></h4>
+          </div>
+        </div>
+        <div class="card">
+          <img src="{{ url_for('static', filename='images/backcard.png')}}" alt="Card" width="200">
+          <div class="card_container">
+          <h4><b>Guess the color</b></h4>
+              <div class="btn-group" role="group" aria-label="...">
+                  <button type="button" class="btn btn-danger">Diamonds</button>
+                  <button type="button" class="btn btn-danger">Hearts</button>
+                  <button type="button" class="btn my-btn">Spades</button>
+                  <button type="button" class="btn my-btn">Clubs</button>
+              </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-  <div class="col-xs-6 col-sm-3">
-    <div class="card">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Playing_card_heart_2.svg/480px-Playing_card_heart_2.svg.png" alt="Card" style="width:150px;height:150px; margin-left:7px;">
-      <div class="container">
-        <h4><b>Two of Hearts</b></h4>
-      </div>
-    </div>
-  </div>
-  <div class="col-xs-6 col-sm-3">
-    <div class="card">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Poker-sm-234-Jd.png" alt="Card" style="width:150px;height:150px; margin-left:7px;">
-      <div class="container">
-        <h4><b>Jack of Diamonds</b></h4>
-      </div>
-    </div>
-  </div>
-  <div class="col-xs-6 col-sm-3">
-    <div class="card">
-      <img src="http://www.djmcadam.com/images/bicycleback01.jpg" alt="Card" style="width:150px;height:150px; margin-left:7px;">
-      <div class="container">
-        <h4><b>Guess the suit</b></h4>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<div class="row">
-  <div class="col-xs-6 col-md-4" style="margin-left:1380px;">
-    <div class="btn-group" role="group" aria-label="...">
-      <button type="button" class="btn btn-danger">Diamonds</button>
-      <button type="button" class="btn btn-danger">Hearts</button>
-      <button type="button" class="btn btn-success">Spades</button>
-      <button type="button" class="btn btn-success">Clubs</button>
-    </div>
   </div>
 </div>
 
