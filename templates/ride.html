@@ -9,11 +9,11 @@
   Click to expand the rules
 </button>
 <div class="collapse" id="collapseExample">
-  <div class="well">
-    The rules of the game are quite simple. You will be making a series of guesses (4 in total). If you guess right, then you move on to the next part of the challenge, if you guess it wrong then
+    <div class="well">
+        The rules of the game are quite simple. You will be making a series of guesses (4 in total). If you guess right, then you move on to the next part of the challenge, if you guess it wrong then
         you will drink. There are a few certain instances where you can get 'screwed' and you have to drink twice. It should also be noted that if you guess wrong, you must go back and start over
         at the beginning.
-  </div>
+    </div>
 </div>
 
 
@@ -21,36 +21,37 @@
 <h4>For the first matter of business. You need to guess if the first card is going to be red or black (the suit color).</h4>
 
 <div class="row">
-  <div class="col-md-12">
-      <div class="card-row">
-        <div class="card">
-          <img src="{{ url_for('static', filename='images/backcard.png')}}" alt="Card" width="200">
-          <div class="card_container">
-          <h4><b>Guess the color</b></h4>
-              <div class="btn-group" role="group" aria-label="...">
-                  <button type="button" class="btn btn-danger">Red</button>
-                  <button type="button" class="btn my-btn">Black</button>
-              </div>
-          </div>
-        </div>
-        <div class="card">
-            <img src="{{ url_for('static', filename='images/AS.png')}}" alt="Card" width="200">
-            <div class="card_container">
-            <h4><b>Ace Spades</b></h4>
+    <div class="col-md-12">
+        <div class="card-row">
+            <div class="card">
+                <img src="{{ url_for('static', filename='images/backcard.png')}}" alt="Card" width=100%>
+                <div class="card_container">
+                <h4><b>Guess the color</b></h4>
+                    <div class="btn-group" role="group" aria-label="...">
+                        <button type="button" class="btn btn-danger">Red</button>
+                        <button type="button" class="btn my-btn">Black</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <img src="{{ url_for('static', filename='images/AS.png')}}" alt="Card" width="200">
+                <div class="card_container">
+                <h4><b>Ace Spades</b></h4>
+                </div>
             </div>
         </div>
-      </div>
-  </div>
+    </div>
 </div>
-
+<br>
+<br>
 
 <div class="alert alert-success alert-dismissible" role="alert">
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-  <strong>Winner</strong> Congrats player, you guessed the color right.
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <strong>Winner</strong> Congrats player, you guessed the color right.
 </div>
 <div class="alert alert-danger alert-dismissible" role="alert">
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-  <strong>Loser</strong> Well crud, it looks like you picked the wrong color.
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <strong>Loser</strong> Well crud, it looks like you picked the wrong color.
 </div>
 
 
@@ -58,98 +59,98 @@
 
 
 <div class="row">
-  <div class="col-md-12">
-      <div class="card-row">
-        <div class="card">
-            <img src="{{ url_for('static', filename='images/AS.png')}}" alt="Card" width="200">
-            <div class="card_container">
-            <h4><b>Ace Spades</b></h4>
+    <div class="col-md-12">
+        <div class="card-row">
+            <div class="card">
+                <img src="{{ url_for('static', filename='images/AS.png')}}" alt="Card" width="200">
+                <div class="card_container">
+                <h4><b>Ace Spades</b></h4>
+                </div>
+            </div>
+            <div class="card">
+                <img src="{{ url_for('static', filename='images/backcard.png')}}" alt="Card" width="200">
+                <div class="card_container">
+                    <h4><b>Guess the color</b></h4>
+                    <div class="btn-group" role="group" aria-label="...">
+                        <button type="button" class="btn btn-danger">High</button>
+                        <button type="button" class="btn btn-success">Low</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <img src="{{ url_for('static', filename='images/2H.png')}}" alt="Card" width="200">
+                <div class="card_container">
+                    <h4><b>Two of Hearts</b></h4>
+                </div>
             </div>
         </div>
-        <div class="card">
-          <img src="{{ url_for('static', filename='images/backcard.png')}}" alt="Card" width="200">
-          <div class="card_container">
-          <h4><b>Guess the color</b></h4>
-              <div class="btn-group" role="group" aria-label="...">
-                  <button type="button" class="btn btn-danger">High</button>
-                  <button type="button" class="btn btn-success">Low</button>
-              </div>
-          </div>
-        </div>
-        <div class="card">
-          <img src="{{ url_for('static', filename='images/2H.png')}}" alt="Card" width="200">
-          <div class="card_container">
-          <h4><b>Two of Hearts</b></h4>
-          </div>
-        </div>
-      </div>
-  </div>
+    </div>
 </div>
 
 
 <div class="alert alert-success alert-dismissible" role="alert">
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-  <strong>Winner</strong> Atta boy (or girl)!!! Thats two in a row.
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <strong>Winner</strong> Atta boy (or girl)!!! Thats two in a row.
 </div>
 <div class="alert alert-danger alert-dismissible" role="alert">
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-  <strong>Wrong</strong>Good thing i'm not paying you to win, because you got that one wrong.
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <strong>Wrong</strong>Good thing i'm not paying you to win, because you got that one wrong.
 </div>
 <div class="alert alert-danger alert-dismissible" role="alert">
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-  <strong>Double Wrong!!!</strong>Wow, now that sucks, since it was the same value as the first you must drink twice and restart.
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <strong>Double Wrong!!!</strong>Wow, now that sucks, since it was the same value as the first you must drink twice and restart.
 </div>
 
 
 <h4>Okay, so now it is time to guess whether you believe the third card is in between or outside of the previous two card values.</h4>
 
 <div class="row">
-  <div class="col-md-12">
-      <div class="card-row">
+    <div class="col-md-12">
+        <div class="card-row">
+            <div class="card">
+                <img src="{{ url_for('static', filename='images/AS.png')}}" alt="Card" width="200">
+                <div class="card_container">
+                    <h4><b>Ace Spades</b></h4>
+                </div>
+            </div>
         <div class="card">
-            <img src="{{ url_for('static', filename='images/AS.png')}}" alt="Card" width="200">
+            <img src="{{ url_for('static', filename='images/2H.png')}}" alt="Card" width="200">
             <div class="card_container">
-            <h4><b>Ace Spades</b></h4>
+                <h4><b>Two of Hearts</b></h4>
             </div>
         </div>
         <div class="card">
-          <img src="{{ url_for('static', filename='images/2H.png')}}" alt="Card" width="200">
-          <div class="card_container">
-          <h4><b>Two of Hearts</b></h4>
-          </div>
+            <img src="{{ url_for('static', filename='images/backcard.png')}}" alt="Card" width="200">
+            <div class="card_container">
+                <h4><b>Guess the color</b></h4>
+                <div class="btn-group" role="group" aria-label="...">
+                    <button type="button" class="btn btn-danger">Inside</button>
+                    <button type="button" class="btn btn-success">Outside</button>
+                </div>
+            </div>
         </div>
         <div class="card">
-          <img src="{{ url_for('static', filename='images/backcard.png')}}" alt="Card" width="200">
-          <div class="card_container">
-          <h4><b>Guess the color</b></h4>
-              <div class="btn-group" role="group" aria-label="...">
-                  <button type="button" class="btn btn-danger">Inside</button>
-                  <button type="button" class="btn btn-success">Outside</button>
-              </div>
-          </div>
-        </div>
-        <div class="card">
-          <img src="{{ url_for('static', filename='images/JD.png')}}" alt="Card" width="200">
-          <div class="card_container">
-          <h4><b>Jack of Diamonds</b></h4>
-          </div>
+            <img src="{{ url_for('static', filename='images/JD.png')}}" alt="Card" width="200">
+            <div class="card_container">
+            <h4><b>Jack of Diamonds</b></h4>
+            </div>
         </div>
       </div>
-  </div>
+    </div>
 </div>
 
 
 <div class="alert alert-success alert-dismissible" role="alert">
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-  <strong>Winner</strong> Atta boy (or girl)!!! Thats two in a row.
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <strong>Winner</strong> Atta boy (or girl)!!! Thats two in a row.
 </div>
 <div class="alert alert-danger alert-dismissible" role="alert">
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-  <strong>Wrong</strong>Good thing i'm not paying you to win, because you got that one wrong.
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <strong>Wrong</strong>Good thing i'm not paying you to win, because you got that one wrong.
 </div>
 <div class="alert alert-danger alert-dismissible" role="alert">
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-  <strong>Double Wrong!!!</strong>Wow, now that sucks, since it was the same value as the first you must drink twice and restart.
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <strong>Double Wrong!!!</strong>Wow, now that sucks, since it was the same value as the first you must drink twice and restart.
 </div>
 
 
@@ -157,50 +158,50 @@
 
 
 <div class="row">
-  <div class="col-md-12">
-      <div class="card-row">
-        <div class="card">
-            <img src="{{ url_for('static', filename='images/AS.png')}}" alt="Card" width="200">
-            <div class="card_container">
-            <h4><b>Ace Spades</b></h4>
+    <div class="col-md-12">
+        <div class="card-row">
+            <div class="card">
+                <img src="{{ url_for('static', filename='images/AS.png')}}" alt="Card" width="200">
+                <div class="card_container">
+                    <h4><b>Ace Spades</b></h4>
+                </div>
+            </div>
+            <div class="card">
+                <img src="{{ url_for('static', filename='images/2H.png')}}" alt="Card" width="200">
+                <div class="card_container">
+                    <h4><b>Two of Hearts</b></h4>
+                </div>
+            </div>
+            <div class="card">
+                <img src="{{ url_for('static', filename='images/JD.png')}}" alt="Card" width="200">
+                <div class="card_container">
+                    <h4><b>Jack of Diamonds</b></h4>
+                </div>
+            </div>
+            <div class="card">
+                <img src="{{ url_for('static', filename='images/backcard.png')}}" alt="Card" width="200">
+                <div class="card_container">
+                <h4><b>Guess the color</b></h4>
+                    <div class="btn-group" role="group" aria-label="...">
+                        <button type="button" class="btn btn-danger">Diamonds</button>
+                        <button type="button" class="btn btn-danger">Hearts</button>
+                        <button type="button" class="btn my-btn">Spades</button>
+                        <button type="button" class="btn my-btn">Clubs</button>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="card">
-          <img src="{{ url_for('static', filename='images/2H.png')}}" alt="Card" width="200">
-          <div class="card_container">
-          <h4><b>Two of Hearts</b></h4>
-          </div>
-        </div>
-        <div class="card">
-          <img src="{{ url_for('static', filename='images/JD.png')}}" alt="Card" width="200">
-          <div class="card_container">
-          <h4><b>Jack of Diamonds</b></h4>
-          </div>
-        </div>
-        <div class="card">
-          <img src="{{ url_for('static', filename='images/backcard.png')}}" alt="Card" width="200">
-          <div class="card_container">
-          <h4><b>Guess the color</b></h4>
-              <div class="btn-group" role="group" aria-label="...">
-                  <button type="button" class="btn btn-danger">Diamonds</button>
-                  <button type="button" class="btn btn-danger">Hearts</button>
-                  <button type="button" class="btn my-btn">Spades</button>
-                  <button type="button" class="btn my-btn">Clubs</button>
-              </div>
-          </div>
-        </div>
-      </div>
-  </div>
+    </div>
 </div>
 
 
 <div class="alert alert-success alert-dismissible" role="alert">
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-  <strong>Winner Winner Chicken Dinner!!!!</strong> Congrats, you have won the game and are now off the bus.
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <strong>Winner Winner Chicken Dinner!!!!</strong> Congrats, you have won the game and are now off the bus.
 </div>
 <div class="alert alert-danger alert-dismissible" role="alert">
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-  <strong>OUCH!!!</strong>So close but yet so far.
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <strong>OUCH!!!</strong>So close but yet so far.
 </div>
 
 
