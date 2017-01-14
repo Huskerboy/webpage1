@@ -23,27 +23,25 @@
 <div class="row">
     <div class="col-md-12">
         <div class="card-row">
-            <div class="card">
-                <img src="{{ url_for('static', filename='images/backcard.png')}}" alt="Card" width=100%>
-                <div class="card_container">
+            <div class="playingCards">
+                <div class="card back">*</div>
                 <h4><b>Guess the color</b></h4>
                     <div class="btn-group" role="group" aria-label="...">
                         <button type="button" class="btn btn-danger">Red</button>
                         <button type="button" class="btn my-btn">Black</button>
                     </div>
-                </div>
             </div>
-            <div class="card">
-                <img src="{{ url_for('static', filename='images/AS.png')}}" alt="Card" width="200">
-                <div class="card_container">
-                <h4><b>Ace Spades</b></h4>
+            <div class="playingCards">
+                <div class="card rank-a spades">
+                    <span class="rank">A</span>
+                    <span class="suit">&spades;</span>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<br>
-<br>
+
+
 
 <div class="alert alert-success alert-dismissible" role="alert">
     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -61,15 +59,15 @@
 <div class="row">
     <div class="col-md-12">
         <div class="card-row">
-            <div class="card">
-                <img src="{{ url_for('static', filename='images/AS.png')}}" alt="Card" width="200">
-                <div class="card_container">
-                <h4><b>Ace Spades</b></h4>
+            <div class="playingCards">
+                <div class="card rank-a spades">
+                    <span class="rank">A</span>
+                    <span class="suit">&spades;</span>
                 </div>
             </div>
             <div class="card">
-                <img src="{{ url_for('static', filename='images/backcard.png')}}" alt="Card" width="200">
-                <div class="card_container">
+                <div class="playingCards">
+                <div class="card back">*</div>
                     <h4><b>Guess the color</b></h4>
                     <div class="btn-group" role="group" aria-label="...">
                         <button type="button" class="btn btn-danger">High</button>
@@ -77,10 +75,10 @@
                     </div>
                 </div>
             </div>
-            <div class="card">
-                <img src="{{ url_for('static', filename='images/2H.png')}}" alt="Card" width="200">
-                <div class="card_container">
-                    <h4><b>Two of Hearts</b></h4>
+            <div class="playingCards">
+                <div class="card rank-2 hearts">
+                    <span class="rank">2</span>
+                    <span class="suit">&hearts;</span>
                 </div>
             </div>
         </div>
@@ -108,33 +106,39 @@
     <div class="col-md-12">
         <div class="card-row">
             <div class="card">
-                <img src="{{ url_for('static', filename='images/AS.png')}}" alt="Card" width="200">
-                <div class="card_container">
-                    <h4><b>Ace Spades</b></h4>
+                <div class="playingCards">
+                    <div class="card rank-a spades">
+                        <span class="rank">A</span>
+                        <span class="suit">&spades;</span>
+                    </div>
                 </div>
             </div>
-        <div class="card">
-            <img src="{{ url_for('static', filename='images/2H.png')}}" alt="Card" width="200">
-            <div class="card_container">
-                <h4><b>Two of Hearts</b></h4>
-            </div>
-        </div>
-        <div class="card">
-            <img src="{{ url_for('static', filename='images/backcard.png')}}" alt="Card" width="200">
-            <div class="card_container">
-                <h4><b>Guess the color</b></h4>
-                <div class="btn-group" role="group" aria-label="...">
-                    <button type="button" class="btn btn-danger">Inside</button>
-                    <button type="button" class="btn btn-success">Outside</button>
+            <div class="card">
+                <div class="playingCards">
+                    <div class="card rank-2 hearts">
+                        <span class="rank">2</span>
+                        <span class="suit">&hearts;</span>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="card">
-            <img src="{{ url_for('static', filename='images/JD.png')}}" alt="Card" width="200">
-            <div class="card_container">
-            <h4><b>Jack of Diamonds</b></h4>
+            <div class="card">
+                <div class="playingCards">
+                    <div class="card back">*</div>
+                        <h4><b>Guess the color</b></h4>
+                        <div class="btn-group" role="group" aria-label="...">
+                            <button type="button" class="btn btn-danger">Inside</button>
+                            <button type="button" class="btn btn-success">Outside</button>
+                        </div>
+                </div>
             </div>
-        </div>
+            <div class="card">
+                <div class="playingCards">
+                    <div class="card rank-j diamonds">
+                        <span class="rank">J</span>
+                        <span class="suit">&diams;</span>
+                    </div>
+                </div>
+            </div>
       </div>
     </div>
 </div>
@@ -161,26 +165,32 @@
     <div class="col-md-12">
         <div class="card-row">
             <div class="card">
-                <img src="{{ url_for('static', filename='images/AS.png')}}" alt="Card" width="200">
-                <div class="card_container">
-                    <h4><b>Ace Spades</b></h4>
+                <div class="playingCards">
+                    <div class="card rank-a spades">
+                        <span class="rank">A</span>
+                        <span class="suit">&spades;</span>
+                    </div>
                 </div>
             </div>
             <div class="card">
-                <img src="{{ url_for('static', filename='images/2H.png')}}" alt="Card" width="200">
-                <div class="card_container">
-                    <h4><b>Two of Hearts</b></h4>
+                <div class="playingCards">
+                    <div class="card rank-2 hearts">
+                        <span class="rank">2</span>
+                        <span class="suit">&hearts;</span>
+                    </div>
                 </div>
             </div>
             <div class="card">
-                <img src="{{ url_for('static', filename='images/JD.png')}}" alt="Card" width="200">
-                <div class="card_container">
-                    <h4><b>Jack of Diamonds</b></h4>
+                <div class="playingCards">
+                    <div class="card rank-j diamonds">
+                        <span class="rank">J</span>
+                        <span class="suit">&diams;</span>
+                    </div>
                 </div>
             </div>
             <div class="card">
-                <img src="{{ url_for('static', filename='images/backcard.png')}}" alt="Card" width="200">
-                <div class="card_container">
+                <div class="playingCards">
+                    <div class="card back">*</div>
                 <h4><b>Guess the color</b></h4>
                     <div class="btn-group" role="group" aria-label="...">
                         <button type="button" class="btn btn-danger">Diamonds</button>

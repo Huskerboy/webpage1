@@ -22,12 +22,14 @@ P {
    color: navy;
 }
 
+/*
 .card {
     border-radius: 5px;
     width: 200px;
     margin: auto;
     text-align: center;
 }
+*/
 
 .card-row {
     display: flex;
