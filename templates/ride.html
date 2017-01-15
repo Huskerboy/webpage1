@@ -20,6 +20,33 @@
 
 <h4>For the first matter of business. You need to guess if the first card is going to be red or black (the suit color).</h4>
 
+
+<!-- Trying to do a flip function -->
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card-row">
+            <div class="playingCards">
+                <h4><b>Guess the color</b></h4>
+                    <div class="btn-group" role="group" aria-label="...">
+                        <button type="button" class="btn btn-danger" onclick="flip()">Red</button>
+                            <section class="card_container">
+                            <div class="playingCards" onclick="flip()">
+                                <div class="card back"></div>
+                                <div class="card"></div>
+                            </div>
+                            </section>
+                        <button type="button" class="btn my-btn">Black</button>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- End of trial code -->
+
+
 <div class="row">
     <div class="col-md-12">
         <div class="card-row">
@@ -213,7 +240,13 @@
     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
     <strong>OUCH!!!</strong>So close but yet so far.
 </div>
-
-
+<!--
+$("#cardId").toggleClass("flip");
+-->
+<script>
+function flip() {
+    $('.card').toggleClass('flipped');
+}
+</script>
 {% endblock %}
 
