@@ -29,11 +29,10 @@
             <div class="playingCards">
                 <h4><b>Guess the color</b></h4>
                     <div class="btn-group" role="group" aria-label="...">
-                        <button type="button" class="btn btn-danger" onclick="flip()">Red</button>
+                        <button type="button" class="btn btn-danger" onclick="open_card()">Red</button>
                             <section class="card_container">
-                            <div class="playingCards" onclick="flip()">
+                            <div class="playingCards" onclick="open_card()">
                                 <div class="card back"></div>
-                                <div class="card"></div>
                             </div>
                             </section>
                         <button type="button" class="btn my-btn">Black</button>
@@ -80,7 +79,7 @@
 </div>
 
 
-<h4>Okay, now that you have guess that color correctly, you must guess whether the value of the second card will be highter or lower than the value of the first, Ace is high.</h4>
+<h4>Okay, now that you have guess that color correctly, you must guess whether the value of the second card will be higher or lower than the value of the first, Ace is high.</h4>
 
 
 <div class="row">
@@ -159,8 +158,8 @@
                 </div>
             </div>
             <div class="card">
-                <div class="playingCards">
-                    <div class="card rank-j diamonds">
+                <div class="playingCards faceImages">
+                    <div class="card rank-j diams">
                         <span class="rank">J</span>
                         <span class="suit">&diams;</span>
                     </div>
@@ -208,8 +207,8 @@
                 </div>
             </div>
             <div class="card">
-                <div class="playingCards">
-                    <div class="card rank-j diamonds">
+                <div class="playingCards faceImages">
+                    <div class="card rank-j diams">
                         <span class="rank">J</span>
                         <span class="suit">&diams;</span>
                     </div>
@@ -242,10 +241,26 @@
 </div>
 <!--
 $("#cardId").toggleClass("flip");
--->
-<script>
+
+card click event
+$('.card').click(function(){
+	var card = $(this);
+	card.toggleClass('open');
+	setTimeout(function(){
+		card.toggleClass('opened');
+	},300);
+});
+
 function flip() {
     $('.card').toggleClass('flipped');
+}
+-->
+<script>
+function open_card(){
+	$('.card.back').addClass('open');
+	setTimeout(function(){
+		$('.card.back').addClass('opened');
+	},300);
 }
 </script>
 {% endblock %}
