@@ -40,7 +40,7 @@
             <h4><b>Guess the color</b></h4>
                 <div class="btn-group" role="group" aria-label="...">
                     <button type="button" id="switch_color" class="btn btn-danger">Red</button>
-                    <button type="button" class="btn my-btn">Black</button>
+                    <button type="button" id="switch_color" class="btn my-btn">Black</button>
                 </div>
         </div>
     </div>
@@ -275,7 +275,7 @@ $( document ).ready(function() {
 $( document ).ready(function() {
     $("button#switch_color").on("click", function() {
         $("div#bingo").hide("slow");
-        $("div#aspad").toggleClass("hide");
+        $("div#aspad").fadeIn("slow");
     });
 
 
@@ -287,4 +287,3 @@ $( document ).ready(function() {
 
 </script>
 {% endblock %}
-
