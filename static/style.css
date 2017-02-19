@@ -28,9 +28,12 @@ P {
 }
 
 #aspad {
-    margin-top: -500px
     position:absolute;
     z-index: 2;
+}
+
+.hide {
+    display: none;
 }
 
 .relative {

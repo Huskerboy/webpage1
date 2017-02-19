@@ -275,7 +275,7 @@ $( document ).ready(function() {
 $( document ).ready(function() {
     $("button#switch_color").on("click", function() {
         $("div#bingo").hide("slow");
-        $("div#aspad").slideDown(2500);
+        $("div#aspad").toggleClass("hide");
     });
 
 
