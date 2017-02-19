@@ -36,17 +36,16 @@
                         </div>
                     </div>
                 </div>
-                <h4><b>Guess the color</b></h4>
-                    <div class="btn-group" role="group" aria-label="...">
-                        <button type="button" id="switch_color" class="btn btn-danger">Red</button>
-                        <button type="button" class="btn my-btn">Black</button>
-                    </div>
             </div>
+            <h4><b>Guess the color</b></h4>
+                <div class="btn-group" role="group" aria-label="...">
+                    <button type="button" id="switch_color" class="btn btn-danger">Red</button>
+                    <button type="button" class="btn my-btn">Black</button>
+                </div>
         </div>
     </div>
 </div>
 
-<div class="placeholder">WHERE IS MY FUCKING DIV</div>
 
 <!-- End of trial code -->
 
@@ -275,8 +274,8 @@ $( document ).ready(function() {
 <script>
 $( document ).ready(function() {
     $("button#switch_color").on("click", function() {
-        $("div#bingo").toggleClass("hide");
-        $("div#aspad").toggleClass("hide");
+        $("div#bingo").hide("slow");
+        $("div#aspad").slideDown(2500);
     });
 
 
