@@ -27,12 +27,21 @@ P {
     height: 100px;
 }
 
-#aspad {
-    display: none;
-    position:absolute;
-    z-index: 2;
+.wrapper {
+    position: relative;
+    width: 75px;
+    height: 100px;
 }
 
+div#aspade {
+    position: absolute;
+    left: -300px;
+    z-index: 1;
+}
+
+#sec_back, #two_hearts, #ace_spades {
+    position: absolute;
+}
 
 .relative {
     position: relative;

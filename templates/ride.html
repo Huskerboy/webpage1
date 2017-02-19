@@ -21,19 +21,19 @@
 <h4>For the first matter of business. You need to guess if the first card is going to be red or black (the suit color).</h4>
 
 
-<!-- Trying to do a flip function -->
-
 <div class="row">
     <div class="col-md-12">
         <div class="card-row">
-            <div class="placeholder">
-                <div class="playingCards">
-                    <div id="bingo" class="card back">*</div>
+            <div class="wrapper">
+                <div id="ace_spades" class="playingCards">
+                <div class="card rank-a spades">
+                    <span class="rank">A</span>
+                    <span class="suit">&spades;</span>
+                </div>
+            </div>
+                <div id="back_card" class="card">
                     <div class="playingCards">
-                        <div id="aspad" class="card rank-a spades hide">
-                            <span class="rank">A</span>
-                            <span class="suit">&spades;</span>
-                        </div>
+                    <div class="card back">*</div>
                     </div>
                 </div>
             </div>
@@ -42,31 +42,6 @@
                     <button type="button" id="switch_color" class="btn btn-danger">Red</button>
                     <button type="button" id="switch_color" class="btn my-btn">Black</button>
                 </div>
-        </div>
-    </div>
-</div>
-
-
-<!-- End of trial code -->
-
-
-<div class="row">
-    <div class="col-md-12">
-        <div class="card-row">
-            <div class="playingCards">
-                <div class="card back">*</div>
-                <h4><b>Guess the color</b></h4>
-                    <div class="btn-group" role="group" aria-label="...">
-                        <button type="button" class="btn btn-danger">Red</button>
-                        <button type="button" class="btn my-btn">Black</button>
-                    </div>
-            </div>
-            <div class="playingCards">
-                <div class="card rank-a spades">
-                    <span class="rank">A</span>
-                    <span class="suit">&spades;</span>
-                </div>
-            </div>
         </div>
     </div>
 </div>
@@ -95,21 +70,23 @@
                     <span class="suit">&spades;</span>
                 </div>
             </div>
-            <div class="card">
-                <div class="playingCards">
-                <div class="card back">*</div>
-                    <h4><b>Guess the color</b></h4>
-                    <div class="btn-group" role="group" aria-label="...">
-                        <button type="button" class="btn btn-danger">High</button>
-                        <button type="button" class="btn btn-success">Low</button>
+            <div class="wrapper">
+                <div id="two_hearts" class="playingCards">
+                    <div class="card rank-2 hearts">
+                        <span class="rank">2</span>
+                        <span class="suit">&hearts;</span>
+                    </div>
+                </div>
+                <div id="sec_back" class="card">
+                    <div class="playingCards">
+                    <div class="card back">*</div>
                     </div>
                 </div>
             </div>
-            <div class="playingCards">
-                <div class="card rank-2 hearts">
-                    <span class="rank">2</span>
-                    <span class="suit">&hearts;</span>
-                </div>
+            <h4><b>Guess High or Low</b></h4>
+            <div class="btn-group" role="group" aria-label="...">
+                <button type="button" id="high_low" class="btn btn-danger">High</button>
+                <button type="button" id="high_low" class="btn btn-success">Low</button>
             </div>
         </div>
     </div>
@@ -272,15 +249,13 @@ $( document ).ready(function() {
   crossorigin="anonymous"></script>
 
 <script>
-$( document ).ready(function() {
+$(document).ready(function() {
     $("button#switch_color").on("click", function() {
-        $("div#bingo").hide("slow");
-        $("div#aspad").fadeIn("slow");
+        $("div#back_card").fadeOut("slow");
     });
-
-
-
-
+    $("button#high_low").on("click", function() {
+        $("div#sec_back").fadeOut("slow");
+    });
 });
 
 
