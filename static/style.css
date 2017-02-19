@@ -22,6 +22,27 @@ P {
    color: navy;
 }
 
+.placeholder {
+    width: 200px;
+    height: 200px;
+    background-color: red;
+    border: 5px solid;
+}
+
+#aspad {
+    position:absolute;
+    z-index: 2;
+}
+
+.hide{
+    display: none;
+}
+
+.relative {
+    position: relative;
+}
+
+
 /*
 .card {
     border-radius: 5px;
@@ -35,6 +56,7 @@ P {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 img {
@@ -48,12 +70,4 @@ img {
 .my-btn {
   background-color: black;
   color: #fff;
-}
-
-
-.card.flipped {
-    -webkit-transform: rotateY( 180deg );
-    -moz-transform: rotateY( 180deg );
-    -o-transform: rotateY( 180deg );
-    transform: rotateY( 180deg );
 }

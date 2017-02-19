@@ -26,15 +26,19 @@
 <div class="row">
     <div class="col-md-12">
         <div class="card-row">
-            <div class="playingCards">
+            <div class="placeholder">
+                <div class="playingCards">
+                    <div id="bingo" class="card back">*</div>
+                    <div class="playingCards">
+                        <div id="aspad" class="card rank-a spades hide">
+                            <span class="rank">A</span>
+                            <span class="suit">&spades;</span>
+                        </div>
+                    </div>
+                </div>
                 <h4><b>Guess the color</b></h4>
                     <div class="btn-group" role="group" aria-label="...">
-                        <button type="button" class="btn btn-danger" onclick="open_card()">Red</button>
-                            <section class="card_container">
-                            <div class="playingCards" onclick="open_card()">
-                                <div class="card back"></div>
-                            </div>
-                            </section>
+                        <button type="button" id="switch_color" class="btn btn-danger">Red</button>
                         <button type="button" class="btn my-btn">Black</button>
                     </div>
             </div>
@@ -42,6 +46,7 @@
     </div>
 </div>
 
+<div class="placeholder">WHERE IS MY FUCKING DIV</div>
 
 <!-- End of trial code -->
 
@@ -254,14 +259,33 @@ $('.card').click(function(){
 function flip() {
     $('.card').toggleClass('flipped');
 }
+$( document ).ready(function() {
+    $("button#switch_color").on("click", function() {
+        $("div#bingo").fadeOut("slow");
+        $("div#aspad").toggleClass("hide");
+    });
+});
 -->
+
+<script
+  src="https://code.jquery.com/jquery-3.1.1.js"
+  integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+  crossorigin="anonymous"></script>
+
 <script>
-function open_card(){
-	$('.card.back').addClass('open');
-	setTimeout(function(){
-		$('.card.back').addClass('opened');
-	},300);
-}
+$( document ).ready(function() {
+    $("button#switch_color").on("click", function() {
+        $("div#bingo").toggleClass("hide");
+        $("div#aspad").toggleClass("hide");
+    });
+
+
+
+
+});
+
+
+
 </script>
 {% endblock %}
 
