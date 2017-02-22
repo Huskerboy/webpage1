@@ -113,40 +113,36 @@
 <div class="row">
     <div class="col-md-12">
         <div class="card-row">
-            <div class="card">
-                <div class="playingCards">
-                    <div class="card rank-a spades">
-                        <span class="rank">A</span>
-                        <span class="suit">&spades;</span>
-                    </div>
+            <div class="playingCards">
+                <div class="card rank-a spades">
+                    <span class="rank">A</span>
+                    <span class="suit">&spades;</span>
                 </div>
             </div>
-            <div class="card">
-                <div class="playingCards">
-                    <div class="card rank-2 hearts">
-                        <span class="rank">2</span>
-                        <span class="suit">&hearts;</span>
-                    </div>
+            <div class="playingCards">
+                <div class="card rank-2 hearts">
+                    <span class="rank">2</span>
+                    <span class="suit">&hearts;</span>
                 </div>
             </div>
-            <div class="card">
-                <div class="playingCards">
-                    <div class="card back">*</div>
-                        <h4><b>Guess the color</b></h4>
-                        <div class="btn-group" role="group" aria-label="...">
-                            <button type="button" class="btn btn-danger">Inside</button>
-                            <button type="button" class="btn btn-success">Outside</button>
-                        </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="playingCards faceImages">
+            <div class="wrapper">
+                <div id="jack_diamonds" class="playingCards faceImages">
                     <div class="card rank-j diams">
                         <span class="rank">J</span>
                         <span class="suit">&diams;</span>
                     </div>
                 </div>
+                <div id="thr_back" class="card">
+                    <div class="playingCards">
+                    <div class="card back">*</div>
+                    </div>
+                </div>
             </div>
+            <h4><b>Guess the color</b></h4>
+                <div class="btn-group" role="group" aria-label="...">
+                    <button type="button" id="in_out" class="btn btn-danger">Inside</button>
+                    <button type="button" id="in_out" class="btn btn-success">Outside</button>
+                </div>
       </div>
     </div>
 </div>
@@ -172,42 +168,44 @@
 <div class="row">
     <div class="col-md-12">
         <div class="card-row">
-            <div class="card">
-                <div class="playingCards">
-                    <div class="card rank-a spades">
-                        <span class="rank">A</span>
-                        <span class="suit">&spades;</span>
-                    </div>
+            <div class="playingCards">
+                <div class="card rank-a spades">
+                    <span class="rank">A</span>
+                    <span class="suit">&spades;</span>
                 </div>
             </div>
-            <div class="card">
-                <div class="playingCards">
-                    <div class="card rank-2 hearts">
-                        <span class="rank">2</span>
-                        <span class="suit">&hearts;</span>
-                    </div>
+            <div class="playingCards">
+                <div class="card rank-2 hearts">
+                    <span class="rank">2</span>
+                    <span class="suit">&hearts;</span>
                 </div>
             </div>
-            <div class="card">
-                <div class="playingCards faceImages">
-                    <div class="card rank-j diams">
-                        <span class="rank">J</span>
-                        <span class="suit">&diams;</span>
-                    </div>
+            <div class="playingCards faceImages">
+                <div class="card rank-j diams">
+                    <span class="rank">J</span>
+                    <span class="suit">&diams;</span>
                 </div>
             </div>
-            <div class="card">
-                <div class="playingCards">
+            <div class="wrapper">
+                <div id="king_clubs" class="playingCards faceImages">
+                    <div class="card rank-k clubs">
+                        <span class="rank">K</span>
+                        <span class="suit">&clubs;</span>
+                    </div>
+                </div>
+                <div id="four_back" class="card">
+                    <div class="playingCards">
                     <div class="card back">*</div>
-                <h4><b>Guess the color</b></h4>
-                    <div class="btn-group" role="group" aria-label="...">
-                        <button type="button" class="btn btn-danger">Diamonds</button>
-                        <button type="button" class="btn btn-danger">Hearts</button>
-                        <button type="button" class="btn my-btn">Spades</button>
-                        <button type="button" class="btn my-btn">Clubs</button>
                     </div>
                 </div>
             </div>
+            <h4><b>Guess the color</b></h4>
+                <div class="btn-group" role="group" aria-label="...">
+                    <button type="button" id="suit_color" class="btn btn-danger">Diamonds</button>
+                    <button type="button" id="suit_color" class="btn btn-danger">Hearts</button>
+                    <button type="button" id="suit_color" class="btn my-btn">Spades</button>
+                    <button type="button" id="suit_color" class="btn my-btn">Clubs</button>
+                </div>
         </div>
     </div>
 </div>
@@ -256,6 +254,12 @@ $(document).ready(function() {
     });
     $("button#high_low").on("click", function() {
         $("div#sec_back").fadeOut("slow");
+    });
+    $("button#in_out").on("click", function() {
+        $("div#thr_back").fadeOut("slow");
+    });
+    $("button#suit_color").on("click", function() {
+        $("div#four_back").fadeOut("slow");
     });
 });
 

@@ -18,6 +18,11 @@ def gwent():
     return render_template('gwent.html')
 
 
+@app.route('/resume', methods=['GET', 'POST'])
+def resume():
+    return render_template('resume.html')
+
+
 @app.route('/user/<name>', methods=['GET', 'POST'])
 def user(name):
     return render_template(user.html, name=name)

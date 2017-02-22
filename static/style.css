@@ -7,24 +7,23 @@ nav {
 H1 {
    font-family: 'Times New Roman';
    font-size: 36px;
-   color: orange;
+   color: red;
 }
 
 H2 {
    font-family: arial,verdana,sans-serif;
-   font-size: 20px;
-   color: black;
+   font-size: 24px;
+   color: navy;
 }
 
 P {
    font-family: arial,verdana,sans-serif;
-   font-size: 16px;
-   color: navy;
+   font-size: 18px;
+   color: black;
 }
 
-.placeholder {
-    width: 75px;
-    height: 100px;
+.content {
+    margin: 5px;
 }
 
 .wrapper {
@@ -33,13 +32,7 @@ P {
     height: 100px;
 }
 
-div#aspade {
-    position: absolute;
-    left: -300px;
-    z-index: 1;
-}
-
-#sec_back, #two_hearts, #ace_spades {
+#sec_back, #thr_back, #four_back, #two_hearts, #ace_spades, #jack_diamonds, #king_clubs {
     position: absolute;
 }
 
