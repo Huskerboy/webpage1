@@ -1,9 +1,13 @@
 body {
-        background: linear-gradient(to right, #E5E5BE, #003973);
+        background-image: url("images/abstract.jpg");
+        background-repeat:no-repeat;
+        background-size:1950px 1000px;
 }
+
 nav {
         margin-left: 7px; margin-top: 7px; margin-right: 7px;
 }
+
 H1 {
    font-family: 'Times New Roman';
    font-size: 36px;
@@ -19,7 +23,7 @@ H2 {
 P {
    font-family: arial,verdana,sans-serif;
    font-size: 18px;
-   color: black;
+   color: white;
 }
 
 .content {
@@ -42,6 +46,7 @@ P {
 
 
 /*
+linear-gradient(to right, #E5E5BE, #003973);
 .card {
     border-radius: 5px;
     width: 200px;
