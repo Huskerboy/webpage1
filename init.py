@@ -28,15 +28,16 @@ def user(name):
     return render_template(user.html, name=name)
 
 
-@app.route('/_draw_card')
+@app.route('/_draw_card', methods=['GET', 'POST'])
 def draw_card():
     card = {
         "face": "ace",
         "suit": "spades"
-}
+    }
     return jsonify(card)
 
-@app.route('/view_card')
+
+@app.route('/view_card', methods=['GET', 'POST'])
 def view_card():
     return render_template('view.html')
 

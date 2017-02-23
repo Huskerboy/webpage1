@@ -8,11 +8,22 @@
     <p></p>
 </div>
 
-
 <script>
 $(document).ready(function() {
     $("button#draw").on("click", function() {
-        $("div#cardo").text("Sup, here your card");
+        $.ajax({
+            type: 'GET',
+            url: "/_draw_card",
+            data: { get_param: 'value' },
+            dataType: 'json',
+            success: function (data) {
+                console.log(data);
+                $("div#cardo").text('You drew an ' + data.face + ' of ' + data.suit);
+            },
+            error: function() {
+            console.log('Houston we have a problem');
+            }
+        });
     });
 });
 </script>
