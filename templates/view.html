@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block body_class %}home_main{% endblock %}
+{% block content %}
+
+<button type="button" id="draw" class="btn btn-success">Draw Card</button>
+
+<div id="cardo">
+    <p></p>
+</div>
+
+
+<script>
+$(document).ready(function() {
+    $("button#draw").on("click", function() {
+        $("div#cardo").text("Sup, here your card");
+    });
+});
+</script>
+
+{% endblock %}
+

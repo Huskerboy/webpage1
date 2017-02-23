@@ -1,4 +1,4 @@
-from flask import Flask, render_template, flash
+from flask import Flask, render_template, flash, jsonify
 
 app = Flask(__name__)
 
@@ -26,6 +26,19 @@ def resume():
 @app.route('/user/<name>', methods=['GET', 'POST'])
 def user(name):
     return render_template(user.html, name=name)
+
+
+@app.route('/_draw_card')
+def draw_card():
+    card = {
+        "face": "ace",
+        "suit": "spades"
+}
+    return jsonify(card)
+
+@app.route('/view_card')
+def view_card():
+    return render_template('view.html')
 
 
 @app.errorhandler(404)

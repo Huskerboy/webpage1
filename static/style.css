@@ -2,6 +2,11 @@ body {
         background-image: url("images/abstract.jpg");
         background-repeat:no-repeat;
         background-size:1950px 1000px;
+        margin: auto;
+}
+
+.ride {
+    background-color: linear-gradient(to right, #E5E5BE, #003973);
 }
 
 nav {
@@ -14,7 +19,9 @@ nav {
     font-weight: 900;
     text-align: center;
     margin-top: 310px;
-    color: white;
+    background: -webkit-linear-gradient(#ffffff, #66ffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .home {
@@ -37,17 +44,6 @@ nav {
     position: relative;
 }
 
-
-/*
-linear-gradient(to right, #E5E5BE, #003973);
-.card {
-    border-radius: 5px;
-    width: 200px;
-    margin: auto;
-    text-align: center;
-}
-*/
-
 .card-row {
     display: flex;
     justify-content: center;
@@ -66,4 +62,13 @@ img {
 .my-btn {
   background-color: black;
   color: #fff;
+}
+
+.arrow {
+    width: 100px;
+    height: 100px;
+    border-top: 20px solid red;
+    border-right: 20px solid red;
+    transform: rotate(45deg);
+    margin: 50px;
 }
