@@ -1,3 +1,4 @@
+import random
 from flask import Flask, render_template, flash, jsonify
 
 app = Flask(__name__)
@@ -30,12 +31,120 @@ def user(name):
 
 @app.route('/_draw_card', methods=['GET', 'POST'])
 def draw_card():
+    suits = _get_suits()
+    faces = _get_faces()
+
+    face = random.choice(faces)
+    suit = random.choice(suits)
+
+    card = {
+        'face': face,
+        'suit': suit,
+    }
+    return jsonify(card)
+
+def _get_suits():
+    suits = [
+        {
+            'name': 'clubs',
+            'color': 'black'
+        },
+        {
+            'name': 'spades',
+            'color': 'black'
+        },
+        {
+            'name': 'diamonds',
+            'color': 'red'
+        },
+        {
+            'name': 'hearts',
+            'color': 'red'
+        },
+    ]
+
+    return suits
+
+
+def _get_faces():
+    faces = [
+        {
+            'name': 'Two',
+            'rank': 2,
+            'weight': 2
+        },
+        {
+            'name': 'Three',
+            'rank': 3,
+            'weight': 3
+        },
+        {
+            'name': 'Four',
+            'rank': 4,
+            'weight': 4
+        },
+        {
+            'name': 'Five',
+            'rank': 5,
+            'weight': 5
+        },
+        {
+            'name': 'Six',
+            'rank': 6,
+            'weight': 6
+        },
+        {
+            'name': 'Seven',
+            'rank': 7,
+            'weight': 7
+        },
+        {
+            'name': 'Eight',
+            'rank': 8,
+            'weight': 8
+        },
+        {
+            'name': 'Nine',
+            'rank': 9,
+            'weight': 9
+        },
+        {
+            'name': 'Ten',
+            'rank': 10,
+            'weight': 10
+        },
+        {
+            'name': 'Jack',
+            'rank': 11,
+            'weight': 10
+        },
+        {
+            'name': 'Queen',
+            'rank': 12,
+            'weight': 10
+        },
+        {
+            'name': 'King',
+            'rank': 13,
+            'weight': 10
+        },
+        {
+            'name': 'Ace',
+            'rank': 14,
+            'weight': 11
+        },
+    ]
+
+    return faces
+
+"""
+def draw_card():
     card = {
         "face": "ace",
         "suit": "spades"
     }
     return jsonify(card)
-
+"""
 
 @app.route('/view_card', methods=['GET', 'POST'])
 def view_card():
