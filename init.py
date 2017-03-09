@@ -46,19 +46,19 @@ def draw_card():
 def _get_suits():
     suits = [
         {
-            'name': 'clubs',
+            'name': 'Clubs',
             'color': 'black'
         },
         {
-            'name': 'spades',
+            'name': 'Spades',
             'color': 'black'
         },
         {
-            'name': 'diamonds',
+            'name': 'Diamonds',
             'color': 'red'
         },
         {
-            'name': 'hearts',
+            'name': 'Hearts',
             'color': 'red'
         },
     ]

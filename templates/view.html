@@ -4,8 +4,10 @@
 
 <button type="button" id="draw" class="btn btn-success">Draw Card</button>
 
-<div id="cardo">
-    <p></p>
+<div class="playingCards">
+    <div class="card">
+
+    </div>
 </div>
 
 <script>
@@ -17,10 +19,7 @@ $(document).ready(function() {
             data: { get_param: 'value' },
             dataType: 'json',
             success: function (data) {
-                console.log(data);
-                console.log(data.face);
-                $("div#cardo").text('You drew an ' + data.face.name + ' of ' + data.suit.name);
-
+                $(.card).addClass(
             },
             error: function() {
             console.log('Houston we have a problem');
