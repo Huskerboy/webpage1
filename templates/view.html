@@ -3,13 +3,14 @@
 {% block content %}
 
 <button type="button" id="draw" class="btn btn-success">Draw Card</button>
-
 <div class="playingCards">
-    <div class="card">
-
+    <div id="first_card" class="card">
     </div>
 </div>
 
+<div id="readout">
+    <p></p>
+</div>
 <script>
 $(document).ready(function() {
     $("button#draw").on("click", function() {
@@ -19,7 +20,8 @@ $(document).ready(function() {
             data: { get_param: 'value' },
             dataType: 'json',
             success: function (data) {
-                $(.card).addClass(
+                $('div#readout').text('You drew an ' + data.face.name + ' of ' + data.suit.name);
+                $('div#first_card').addClass(data.face.style_rank).addClass(data.suit.style_name);
             },
             error: function() {
             console.log('Houston we have a problem');
@@ -30,4 +32,4 @@ $(document).ready(function() {
 </script>
 
 {% endblock %}
-
+data.face.name + ' of ' + data.suit.name

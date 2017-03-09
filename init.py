@@ -40,26 +40,33 @@ def draw_card():
     card = {
         'face': face,
         'suit': suit,
+        'style_name': suit,
+        'style_rank': face,
     }
     return jsonify(card)
+
 
 def _get_suits():
     suits = [
         {
             'name': 'Clubs',
-            'color': 'black'
+            'color': 'black',
+            'style_name': 'clubs'
         },
         {
             'name': 'Spades',
-            'color': 'black'
+            'color': 'black',
+            'style_name': 'spades'
         },
         {
             'name': 'Diamonds',
-            'color': 'red'
+            'color': 'red',
+            'style_name': 'diams'
         },
         {
             'name': 'Hearts',
-            'color': 'red'
+            'color': 'red',
+            'style_name': 'hearts'
         },
     ]
 
@@ -71,67 +78,80 @@ def _get_faces():
         {
             'name': 'Two',
             'rank': 2,
-            'weight': 2
+            'weight': 2,
+            'style_rank': 'rank-2'
         },
         {
             'name': 'Three',
             'rank': 3,
-            'weight': 3
+            'weight': 3,
+            'style_rank': 'rank-3'
         },
         {
             'name': 'Four',
             'rank': 4,
-            'weight': 4
+            'weight': 4,
+            'style_rank': 'rank-4'
         },
         {
             'name': 'Five',
             'rank': 5,
-            'weight': 5
+            'weight': 5,
+            'style_rank': 'rank-5'
         },
         {
             'name': 'Six',
             'rank': 6,
-            'weight': 6
+            'weight': 6,
+            'style_rank': 'rank-6'
         },
         {
             'name': 'Seven',
             'rank': 7,
-            'weight': 7
+            'weight': 7,
+            'style_rank': 'rank-7'
         },
         {
             'name': 'Eight',
             'rank': 8,
-            'weight': 8
+            'weight': 8,
+            'style_rank': 'rank-8'
         },
         {
             'name': 'Nine',
             'rank': 9,
-            'weight': 9
+            'weight': 9,
+            'style_rank': 'rank-9'
         },
         {
             'name': 'Ten',
             'rank': 10,
-            'weight': 10
+            'weight': 10,
+            'style_rank': 'rank-10'
         },
         {
             'name': 'Jack',
             'rank': 11,
-            'weight': 10
+            'weight': 10,
+            'style_rank': 'rank-j'
         },
         {
             'name': 'Queen',
             'rank': 12,
-            'weight': 10
+            'weight': 10,
+            'style_rank': 'rank-q'
         },
         {
             'name': 'King',
             'rank': 13,
-            'weight': 10
+            'weight': 10,
+            'style_rank': 'rank-k'
         },
         {
             'name': 'Ace',
             'rank': 14,
-            'weight': 11
+            'weight': 11,
+            'style_rank': 'rank-a'
         },
     ]
 
