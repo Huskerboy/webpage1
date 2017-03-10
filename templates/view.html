@@ -3,8 +3,11 @@
 {% block content %}
 
 <button type="button" id="draw" class="btn btn-success">Draw Card</button>
-<div class="playingCards">
+
+<div id="benny">
     <div id="first_card" class="card">
+        <span id="span1"></span>
+        <span id="span2"></span>
     </div>
 </div>
 
@@ -20,8 +23,11 @@ $(document).ready(function() {
             data: { get_param: 'value' },
             dataType: 'json',
             success: function (data) {
-                $('div#readout').text('You drew an ' + data.face.name + ' of ' + data.suit.name);
+                $('div#benny').addClass('playingCards').addClass('faceImages');
+                $('div#readout').text('You drew a ' + data.face.name + ' of ' + data.suit.name);
                 $('div#first_card').addClass(data.face.style_rank).addClass(data.suit.style_name);
+                $('span#span1').addClass('rank').text(data.face.symbol);
+                $('span#span2').addClass('suit').html('&' + data.suit.style_name + ';');
             },
             error: function() {
             console.log('Houston we have a problem');
