@@ -32,11 +32,11 @@ nav {
 
 .wrapper {
     position: relative;
-    width: 75px;
-    height: 100px;
+    width: 150px;
+    height: 125px;
 }
 
-#sec_back, #thr_back, #four_back, #two_hearts, #ace_spades, #jack_diamonds, #king_clubs {
+#sec_back, #thr_back, #four_back, back_card1, back_card2, back_card3, back_card4, #two_hearts, #ace_spades, #jack_diamonds, #king_clubs {
     position: absolute;
 }
 

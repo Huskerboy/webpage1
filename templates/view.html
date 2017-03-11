@@ -2,18 +2,82 @@
 {% block body_class %}home_main{% endblock %}
 {% block content %}
 
-<button type="button" id="draw" class="btn btn-success">Draw Card</button>
 
-<div id="benny">
-    <div id="first_card" class="card">
-        <span id="span1"></span>
-        <span id="span2"></span>
+<div class="row">
+    <div class="col-md-12">
+        <div class="card-row">
+            <div class="wrapper">
+                <div id="abe">
+                    <div id="first_card" class="card">
+                        <span id="span1"></span>
+                        <span id="span2"></span>
+                    </div>
+                </div>
+                <div id="back_card1" class="card">
+                    <div class="playingCards">
+                        <div class="card back">*</div>
+                    </div>
+                </div>
+                    <button type="button" id="draw" class="btn btn-success">Draw Card</button>
+                <div id="readout1">
+                    <p></p>
+                </div>
+            </div>
+            <div class="wrapper">
+                <div id="ben">
+                    <div id="second_card" class="card">
+                        <span id="span3"></span>
+                        <span id="span4"></span>
+                    </div>
+                </div>
+                <div id="back_card2" class="card">
+                    <div class="playingCards">
+                        <div class="card back">*</div>
+                    </div>
+                </div>
+                    <button type="button" id="draw2" class="btn btn-success">Draw 2nd Card</button>
+                <div id="readout2">
+                    <p></p>
+                </div>
+            </div>
+            <div class="wrapper">
+                <div id="carl">
+                    <div id="third_card" class="card">
+                        <span id="span5"></span>
+                        <span id="span6"></span>
+                    </div>
+                </div>
+                <div id="back_card3" class="card">
+                    <div class="playingCards">
+                        <div class="card back">*</div>
+                    </div>
+                </div>
+                    <button type="button" id="draw3" class="btn btn-success">Draw 3nd Card</button>
+                <div id="readout3">
+                    <p></p>
+                </div>
+            </div>
+            <div class="wrapper">
+                <div id="dane">
+                    <div id="fourth_card" class="card">
+                        <span id="span7"></span>
+                        <span id="span8"></span>
+                    </div>
+                </div>
+                <div id="back_card4" class="card">
+                    <div class="playingCards">
+                        <div class="card back">*</div>
+                    </div>
+                </div>
+                    <button type="button" id="draw4" class="btn btn-success">Draw last card</button>
+                <div id="readout4">
+                    <p></p>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
-<div id="readout">
-    <p></p>
-</div>
 <script>
 $(document).ready(function() {
     $("button#draw").on("click", function() {
@@ -23,11 +87,69 @@ $(document).ready(function() {
             data: { get_param: 'value' },
             dataType: 'json',
             success: function (data) {
-                $('div#benny').addClass('playingCards').addClass('faceImages');
-                $('div#readout').text('You drew a ' + data.face.name + ' of ' + data.suit.name);
+                $('div#abe').addClass('playingCards').addClass('faceImages');
+                $('div#readout1').text('You drew a ' + data.face.name + ' of ' + data.suit.name);
                 $('div#first_card').addClass(data.face.style_rank).addClass(data.suit.style_name);
                 $('span#span1').addClass('rank').text(data.face.symbol);
                 $('span#span2').addClass('suit').html('&' + data.suit.style_name + ';');
+                $("div#back_card1").hide();
+            },
+            error: function() {
+            console.log('Houston we have a problem');
+            }
+        });
+    });
+    $("button#draw2").on("click", function() {
+        $.ajax({
+            type: 'GET',
+            url: "/_draw_card",
+            data: { get_param: 'value' },
+            dataType: 'json',
+            success: function (data) {
+                $('div#ben').addClass('playingCards').addClass('faceImages');
+                $('div#readout2').text('You drew a ' + data.face.name + ' of ' + data.suit.name);
+                $('div#second_card').addClass(data.face.style_rank).addClass(data.suit.style_name);
+                $('span#span3').addClass('rank').text(data.face.symbol);
+                $('span#span4').addClass('suit').html('&' + data.suit.style_name + ';');
+                $("div#back_card2").hide();
+            },
+            error: function() {
+            console.log('Houston we have a problem');
+            }
+        });
+    });
+    $("button#draw3").on("click", function() {
+        $.ajax({
+            type: 'GET',
+            url: "/_draw_card",
+            data: { get_param: 'value' },
+            dataType: 'json',
+            success: function (data) {
+                $('div#carl').addClass('playingCards').addClass('faceImages');
+                $('div#readout3').text('You drew a ' + data.face.name + ' of ' + data.suit.name);
+                $('div#third_card').addClass(data.face.style_rank).addClass(data.suit.style_name);
+                $('span#span5').addClass('rank').text(data.face.symbol);
+                $('span#span6').addClass('suit').html('&' + data.suit.style_name + ';');
+                $("div#back_card3").hide();
+            },
+            error: function() {
+            console.log('Houston we have a problem');
+            }
+        });
+    });
+    $("button#draw4").on("click", function() {
+        $.ajax({
+            type: 'GET',
+            url: "/_draw_card",
+            data: { get_param: 'value' },
+            dataType: 'json',
+            success: function (data) {
+                $('div#dane').addClass('playingCards').addClass('faceImages');
+                $('div#readout4').text('You drew a ' + data.face.name + ' of ' + data.suit.name);
+                $('div#fourth_card').addClass(data.face.style_rank).addClass(data.suit.style_name);
+                $('span#span7').addClass('rank').text(data.face.symbol);
+                $('span#span8').addClass('suit').html('&' + data.suit.style_name + ';');
+                $("div#back_card4").hide();
             },
             error: function() {
             console.log('Houston we have a problem');
