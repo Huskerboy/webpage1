@@ -18,7 +18,8 @@
                         <div class="card back">*</div>
                     </div>
                 </div>
-                    <button type="button" id="draw" class="btn btn-success">Draw Card</button>
+                    <button type="button" id="black" class="btn my-btn">Black</button>
+                    <button type="button" id="red" class="btn btn-danger">Red</button>
                 <div id="readout1">
                     <p></p>
                 </div>
@@ -52,7 +53,7 @@
                         <div class="card back">*</div>
                     </div>
                 </div>
-                    <button type="button" id="draw3" class="btn btn-success">Draw 3nd Card</button>
+                    <button type="button" id="draw3" class="btn btn-success">Draw 3rd Card</button>
                 <div id="readout3">
                     <p></p>
                 </div>
@@ -80,7 +81,25 @@
 
 <script>
 $(document).ready(function() {
-    $("button#draw").on("click", function() {
+    $("button#red").on("click", function() {
+        $.ajax({
+            type: 'GET',
+            url: "/_draw_card",
+            data: { get_param: 'value' },
+            dataType: 'json',
+            success: function (data) {
+                $('div#abe').addClass('playingCards').addClass('faceImages');
+                $('div#readout1').text('You drew a ' + data.face.name + ' of ' + data.suit.name);
+                $('div#first_card').addClass(data.face.style_rank).addClass(data.suit.style_name);
+                $('span#span1').addClass('rank').text(data.face.symbol);
+                $('span#span2').addClass('suit').html('&' + data.suit.style_name + ';');
+            },
+            error: function() {
+            console.log('Houston we have a problem');
+            }
+        });
+    });
+    $("button#red").on("click", function() {
         $.ajax({
             type: 'GET',
             url: "/_draw_card",

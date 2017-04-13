@@ -1,5 +1,5 @@
 import random
-from flask import Flask, render_template, flash, jsonify
+from flask import Flask, session, render_template, flash, jsonify
 
 app = Flask(__name__)
 
@@ -178,6 +178,35 @@ def draw_card():
     }
     return jsonify(card)
 """
+
+@app.route('/_first_step', methods=['GET', 'POST'])
+def first_step():
+    first_card = draw_card()
+    if guess_color == first_card['suit']['color']:
+        second_step(first_card)
+    else:
+        first_step()
+
+@app.route('/_second_step', methods=['GET', 'POST'])
+def second_step(first_card):
+    second_card = draw_card()
+    if guess_high_low == 'high':
+        if second_card['face']['rank'] > first_card['face']['rank']:
+            third_step(first_card, second_card)
+        elif second_card['face']['rank'] == first_card['face']['rank']:
+            first_step()
+        else:
+            first_step()
+
+    elif guess_high_low == 'low':
+        if second_card['face']['rank'] < first_card['face']['rank']:
+            third_step(first_card, second_card)
+        elif second_card['face']['rank'] == first_card['face']['rank']:
+            first_step()
+        else:
+            first_step()
+
+
 
 @app.route('/view_card', methods=['GET', 'POST'])
 def view_card():
