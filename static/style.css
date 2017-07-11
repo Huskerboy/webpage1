@@ -1,8 +1,9 @@
 body {
-        background-image: url("images/abstract.jpg");
-        background-repeat:no-repeat;
-        background-size:1950px 1000px;
-        margin: auto;
+    background: url("images/tree.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover; /* For WebKit*/
+    -moz-background-size: cover;    /* Mozilla*/
+    -o-background-size: cover;      /* Opera*/
+    background-size: cover;
 }
 
 .ride {

@@ -3,7 +3,7 @@ $(document).ready(function() {
     function cardAssembly(zero, one, two, three, four, five, six) {
         $.ajax({
             type: 'GET',
-            url: "/_draw_card",
+            url: "/first_step",
             data: { get_param: 'value' },
             dataType: 'json',
             success: function (data) {
