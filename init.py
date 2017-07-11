@@ -82,8 +82,27 @@ def logout():
 
 
 @app.route('/', methods=['GET', 'POST'])
-def homepage():
+def index():
     return render_template("main.html")
+
+
+@app.route('/main')
+@app.route('/main/<username>')
+def stream(username=None):
+    template = 'main.html'
+    if username and username != current_user.username:
+        try:
+            user = models.User.select().where(models.User.username**username).get()
+        except models.DoesNotExist:
+            abort(404)
+        else:
+            main
+    else:
+        main
+        user = current_user
+    if username:
+        template = 'user_stream.html'
+    return render_template(template, main=main, user=user)
 
 
 @app.route('/ride_bus', methods=['GET', 'POST'])
@@ -296,7 +315,7 @@ def internal_server_error(e):
     return render_template('500.html'), 500
 
 
-if __name__ == ("__main__"):
+if __name__ == "__main__":
     models.initialize()
     try:
         models.User.create_user(
