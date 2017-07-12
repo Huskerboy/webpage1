@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 {% block body_class %}home_main{% endblock %}
 {% block content %}
+<div class="home">
+    <h1 id="home_name">Hello{% if current_user.is_authenticated %} {{ current_user.username }}{% endif%}</h1>
+</div>
+
 {% endblock %}
 
 
