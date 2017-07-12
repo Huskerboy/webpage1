@@ -53,6 +53,7 @@ class Relationship(Model):
         )
 """
 
+
 def initialize():
     DATABASE.connect()
     DATABASE.create_tables([User], safe=True)  # Post, Relationship can be argument if interaction is added
