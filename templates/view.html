@@ -18,8 +18,30 @@
                         <div class="card back">*</div>
                     </div>
                 </div>
-                    <button type="button" id="black" class="btn my-btn">Black</button>
-                    <button type="button" id="red" class="btn btn-danger">Red</button>
+                    <button value='black' type="button" id="black" class="btn my-btn btn-guess">Black</button>
+                    <button value='black' type="button" id="red" class="btn btn-danger btn-guess">Red</button>
+                <div id="readout1">
+                    <p></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="card-row">
+            <div class="wrapper">
+                <div id="abe">
+                    <div id="first_card" class="card">
+                        <span id="span1"></span>
+                        <span id="span2"></span>
+                    </div>
+                </div>
+                <div id="back_card1" class="card">
+                    <div class="playingCards">
+                        <div class="card back">*</div>
+                    </div>
+                </div>
                 <div id="readout1">
                     <p></p>
                 </div>
@@ -36,7 +58,46 @@
                         <div class="card back">*</div>
                     </div>
                 </div>
-                    <button type="button" id="draw2" class="btn btn-success">Draw 2nd Card</button>
+                    <button type="button" id="high" class="btn-guess btn btn-primary">High</button>
+                    <button type="button" id="low" class="btn-guess btn btn-danger">Low</button>
+                <div id="readout2">
+                    <p></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="card-row">
+            <div class="wrapper">
+                <div id="abe">
+                    <div id="first_card" class="card">
+                        <span id="span1"></span>
+                        <span id="span2"></span>
+                    </div>
+                </div>
+                <div id="back_card1" class="card">
+                    <div class="playingCards">
+                        <div class="card back">*</div>
+                    </div>
+                </div>
+                <div id="readout1">
+                    <p></p>
+                </div>
+            </div>
+            <div class="wrapper">
+                <div id="ben">
+                    <div id="second_card" class="card">
+                        <span id="span3"></span>
+                        <span id="span4"></span>
+                    </div>
+                </div>
+                <div id="back_card2" class="card">
+                    <div class="playingCards">
+                        <div class="card back">*</div>
+                    </div>
+                </div>
                 <div id="readout2">
                     <p></p>
                 </div>
@@ -53,7 +114,62 @@
                         <div class="card back">*</div>
                     </div>
                 </div>
-                    <button type="button" id="draw3" class="btn btn-success">Draw 3rd Card</button>
+                    <button type="button" id="inside" class="btn-guess btn btn-primary">Inside</button>
+                    <button type="button" id="outside" class="btn-guess btn btn-danger">Outside</button>
+                <div id="readout3">
+                    <p></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="card-row">
+            <div class="wrapper">
+                <div id="abe">
+                    <div id="first_card" class="card">
+                        <span id="span1"></span>
+                        <span id="span2"></span>
+                    </div>
+                </div>
+                <div id="back_card1" class="card">
+                    <div class="playingCards">
+                        <div class="card back">*</div>
+                    </div>
+                </div>
+                <div id="readout1">
+                    <p></p>
+                </div>
+            </div>
+            <div class="wrapper">
+                <div id="ben">
+                    <div id="second_card" class="card">
+                        <span id="span3"></span>
+                        <span id="span4"></span>
+                    </div>
+                </div>
+                <div id="back_card2" class="card">
+                    <div class="playingCards">
+                        <div class="card back">*</div>
+                    </div>
+                </div>
+                <div id="readout2">
+                    <p></p>
+                </div>
+            </div>
+            <div class="wrapper">
+                <div id="carl">
+                    <div id="third_card" class="card">
+                        <span id="span5"></span>
+                        <span id="span6"></span>
+                    </div>
+                </div>
+                <div id="back_card3" class="card">
+                    <div class="playingCards">
+                        <div class="card back">*</div>
+                    </div>
+                </div>
                 <div id="readout3">
                     <p></p>
                 </div>
@@ -70,7 +186,10 @@
                         <div class="card back">*</div>
                     </div>
                 </div>
-                    <button type="button" id="draw4" class="btn btn-success">Draw last card</button>
+                    <button type="button" id="spades" class="btn-guess btn my-btn">Spades</button>
+                    <button type="button" id="clubs" class="btn-guess btn my-btn">Clubs</button>
+                    <button type="button" id="diamonds" class="btn-guess btn btn-danger">Diamonds</button>
+                    <button type="button" id="hearts" class="btn-guess btn btn-danger">Hearts</button>
                 <div id="readout4">
                     <p></p>
                 </div>
@@ -79,7 +198,18 @@
     </div>
 </div>
 
-<script src="../static/js/view.js"></script>
+<script src="{{url_for('static', filename='js/view.js')}}"></script>
+
 
 {% endblock %}
+<!--
 data.face.name + ' of ' + data.suit.name
+$.ajax({
+  method: "POST",
+  url: "some.php",
+  data: { name: "John", location: "Boston" }
+})
+  .done(function( msg ) {
+    alert( "Data Saved: " + msg );
+  });
+-->

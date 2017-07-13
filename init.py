@@ -309,6 +309,12 @@ def view_card():
 def page_not_found(e):
     return render_template('404.html'), 404
 
+@app.route('/test_route', methods=['POST'])
+def test():
+    userdata = flask.request.get_json()
+    if guess in userdata:
+        return 'Your guess was ()'.format(userdata['guess'])
+
 
 if __name__ == "__main__":
     models.initialize()
