@@ -17,6 +17,35 @@ class User(UserMixin, Model):
         database = DATABASE
         order_by = ('-joined_at',)
 
+    def get_posts(self):
+        return Post.select().where(Post.user == self)
+
+    def get_stream(self):
+        return Post.select().where(
+            (Post.user << self.following()) |
+            (Post.user == self)
+        )
+
+    def following(self):
+        """The users that we are following"""
+        return(
+            User.select().join(
+                Relationship, on=Relationship.to_user
+            ).where(
+                Relationship.from_user == self
+            )
+        )
+
+    def followers(self):
+        """Get users following the current user"""
+        return (
+            User.select().join(
+                Relationship, on=Relationship.from_user
+            ).where(
+                Relationship.to_user == self
+            )
+        )
+
     @classmethod  # cls allows you to hold the class itself, and not an instance.
     def create_user(cls, username, password, admin=False):
         try:
@@ -28,7 +57,7 @@ class User(UserMixin, Model):
         except IntegrityError:
             raise ValueError("User already exists")
 
-"""
+
 class Post(Model):
     timestamp = DateTimeField(default=datetime.datetime.now)
     user = ForeignKeyField(
@@ -51,10 +80,10 @@ class Relationship(Model):
         indexes = (
             (('from_user', 'to_user'), True)
         )
-"""
+
 
 
 def initialize():
     DATABASE.connect()
-    DATABASE.create_tables([User], safe=True)  # Post, Relationship can be argument if interaction is added
+    DATABASE.create_tables([User, Post, Relationship], safe=True)
     DATABASE.close()
