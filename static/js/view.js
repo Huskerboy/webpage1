@@ -29,51 +29,44 @@ $(document).ready(function() {
         cardAssembly('black', '#back_card1', 'div#abe', 'div#readout1', 'div#first_card', 'span#span1', 'span#span2');
         $('#black').prop("disabled",true);
     });
+
     **/
-    $('.btn-guess').on("click", function(e){
+    $('.btn-guess-hl').on("click", function(e){
+    e.preventDefault();
+    var this_guess = $(this).val();
+    $.ajax({
+        method: "POST",
+        url: "/test_route",
+        contentType:"application/json; charset=utf-8",
+        data: JSON.stringify({"guess_color": this_guess}),
+    }).done(function( msg ) {
+        alert( msg );
+        });
+    });
+    $('.btn-guess-color').on("click", function(e){
         e.preventDefault();
         var this_guess = $(this).val();
         $.ajax({
-        method: "POST",
-        url: "/test_route",
-        data: { guess: this_guess }
-    })
-    .done(function( msg ) {
-        alert( msg );
+            method: "POST",
+            url: "/test_route",
+            contentType:"application/json; charset=utf-8",
+            data: JSON.stringify({"guess_color": this_guess}),
+        }).done(function( msg ) {
+            alert( msg );
+        });
     });
+    /**
+    $('.btn-guess-hl').on("click", function(e){
+        e.preventDefault();
+        var this_guess = $(this).val();
+        $.ajax({
+            method: "POST",
+            url: "/test_route",
+            contentType:"application/json; charset=utf-8",
+            data: JSON.stringify({"guess_hl": this_guess}),
+        }).done(function( msg ) {
+            alert( msg );
+        });
     });
-
-    $.ajax({
-        method: "POST",
-        url: "/first_step",
-        data: { guess: "Black" }
-    })
-    .done(function( msg ) {
-        alert( "Data Saved: " + msg );
-    });
-    $.ajax({
-        method: "POST",
-        url: "/second_step",
-        data: { guess: "High" }
-    })
-    .done(function( msg ) {
-        alert( "Data Saved: " + msg );
-    });
-    $.ajax({
-        method: "POST",
-        url: "/third_step",
-        data: { guess: "Inside" }
-    })
-    .done(function( msg ) {
-        alert( "Data Saved: " + msg );
-    });
-    $.ajax({
-        method: "POST",
-        url: "/final_step",
-        data: { guess: "Spades" }
-    })
-    .done(function( msg ) {
-        alert( "Data Saved: " + msg );
-    });
-
+    **/
 });

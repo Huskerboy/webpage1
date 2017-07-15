@@ -1,4 +1,6 @@
 import random
+import json
+import requests
 from flask import (Flask, session, render_template, flash, jsonify,
                    escape, redirect, url_for, request, g, abort)
 from flask_bcrypt import check_password_hash
@@ -120,7 +122,7 @@ def user(name):
     return render_template(user.html, name=name)
 
 
-@app.route('/_draw_card', methods=['GET', 'POST'])
+# @app.route('/_draw_card', methods=['GET', 'POST'])
 def draw_card():
     suits = _get_suits()
     faces = _get_faces()
@@ -134,7 +136,7 @@ def draw_card():
         'style_name': suit,
         'style_rank': face,
     }
-    return jsonify(card)
+    return card
 
 
 def _get_suits():
@@ -271,13 +273,28 @@ def draw_card():
 """
 
 
+@app.route('/test_route', methods=['POST'])
+def test():
+    userdata = request.get_json()
+    first_card = draw_card()
+    if 'guess_color' in userdata:
+        if 'guess_color' == first_card['suit']['color']:
+            return 'Correct, Your guess was {} and the card was a {} of {}'.format(userdata['guess_color'], first_card['face']['name'], first_card['suit']['name'])
+        else:
+            return 'Wrong, Your guess was {} and the card was a {} of {}'.format(userdata['guess_color'], first_card['face']['name'], first_card['suit']['name'])
+    return "Bad request you dummy"
+
+
 @app.route('/_first_step', methods=['GET', 'POST'])
 def first_step():
+    userdata = request.get_json()
     first_card = draw_card()
-    if guess_color == first_card['suit']['color']:
-        second_step(first_card)
-    else:
-        first_step()
+    if 'guess_color' in userdata:
+        if 'guess_color' == first_card['suit']['color']:
+            return 'Correct, Your guess was {} and the card was {}'.format(userdata['guess_color'], first_card['suit']['color'])
+        else:
+            return 'Wrong, Your guess was {} and the card was {}'.format(userdata['guess_color'], first_card['suit']['color'])
+    return "Bad request you dummy"
 
 
 @app.route('/second_step', methods=['GET', 'POST'])
@@ -309,12 +326,6 @@ def view_card():
 def page_not_found(e):
     return render_template('404.html'), 404
 
-@app.route('/test_route', methods=['POST'])
-def test():
-    userdata = flask.request.get_json()
-    if guess in userdata:
-        return 'Your guess was ()'.format(userdata['guess'])
-
 
 if __name__ == "__main__":
     models.initialize()
@@ -327,4 +338,3 @@ if __name__ == "__main__":
     except ValueError:
         pass
     app.run(debug=DEBUG, host=HOST, port=PORT)
-
