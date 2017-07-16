@@ -6,20 +6,17 @@ body {
     background-size: cover;
 }
 
-.ride {
-    background-color: linear-gradient(to right, #E5E5BE, #003973);
-}
-
 nav {
-        margin-left: 7px; margin-top: 7px; margin-right: 7px;
+    margin-left: 7px; margin-top: 7px; margin-right: 7px;
+    position: relative;
+    line-height: 60px;
 }
 
 #home_name {
-    font-size: 8em;
+    font-size: 6em;
     font-family: verdana, arial, sans-serif;
-    font-weight: 900;
+    font-weight: 600;
     text-align: center;
-    margin-top: 310px;
     background: -webkit-linear-gradient(#ffffff, #66ffff);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -77,32 +74,27 @@ img {
 
 /*Main*/
 .main {
-  max-width: 800px;
-  margin: 40px auto 0;
-  background: #fff;
-  border-radius: 4px;
-  transition: .35s linear;
-  padding-bottom: 20px;
+    border: solid red;
+    max-width: 800px;
+    margin: 40px auto 0;
+    background: #fff;
+    border-radius: 4px;
+    transition: .35s linear;
+    padding-bottom: 20px;
 }
 
 .skinny {
-  max-width: 320px;
-  padding: 40px;
-}
-
-nav{
-  padding: 0 0 0 20px;
-  position: relative;
-  line-height: 60px;
-  font-size: .875em;
+    max-width: 320px;
+    padding: 40px;
 }
 
 nav a {
-  padding: 0 20px 10px;
+    padding: 0 20px 10px;
 }
 
 .navbar-brand {
-    float: left;
+    display: inline-block;
+    text-align: center;
     height: 25px;
     padding: 0px 0px;
     font-size: 20px;
@@ -157,6 +149,7 @@ input:focus {
 }
 textarea {
   width: 100%;
+  height: 150px;
   border: 0;
   border-bottom: 2px solid #D3D8DC;
   outline: 0;
@@ -171,6 +164,7 @@ textarea:focus {
 }
 button {
   padding: 10px 0;
+  margin: -10px 3px -18px;
   text-align: center;
   background: #6ECDF7;
   color: #fff;

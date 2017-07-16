@@ -1,47 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>My Webpage</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='style.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='cards.css')}}">
-    <script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
-</head>
-<header>
-    <nav class="navbar navbar-inverse">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <h1 class="navbar-brand">Hello {{ current_user.username }}</h1>
-            </div>
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/view">View</a></li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
+    <head>
+        <meta charset="UTF-8">
+        <title>My Webpage</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='style.css')}}">
+        <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='cards.css')}}">
+        <script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
+    </head>
+    <body>
+        <header>
+            <nav class="navbar navbar-inverse">
+                <div class="container-fluid">
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/view">View</a></li>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            <!-- Log in/Log out -->
+                            {% if current_user.is_authenticated %}
+                            <li><a href="{{ url_for('logout') }}"><span class="glyphicon glyphicon-log-in"></span> Logout </a></li>
+                            {% else %}
+                            <li><a href="{{ url_for('login') }}"><span class="glyphicon glyphicon-log-out"></span> Login </a></li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
 
-                    <!-- Log in/Log out -->
+        <!-- Flash messages -->
+
+        {% with messages = get_flashed_messages(with_categories=True) %}
+            {% if messages%}
+                {% for category, message in messages %}
+                    <div class="notification {{ category }}">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        <div class="row">
+            <div class="main">
+                <nav>
+                    <a href="{{ url_for('index') }}">All</a>
                     {% if current_user.is_authenticated %}
-                    <li><a href="{{ url_for('logout') }}"><span class="glyphicon glyphicon-log-in"></span> Logout </a></li>
-                    {% else %}
-                    <li><a href="{{ url_for('login') }}"><span class="glyphicon glyphicon-log-out"></span> Login </a></li>
+                    <a href="{{ url_for('stream', username=current_user.username) }}">Following</a>
+                    <a href="{{ url_for('post') }}" class="new">Create New Post</a>
                     {% endif %}
-                </ul>
+                </nav>
+                {% block content %}{% endblock %}
             </div>
         </div>
-    </nav>
 
 
-</header>
-<body>
-{% block content %}{% endblock %}
-</body>
+        <script src="{{url_for('static', filename='js/view.js')}}"></script>
 
-
-<script src="{{url_for('static', filename='js/view.js')}}"></script>
+    </body>
 </html>

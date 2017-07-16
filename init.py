@@ -86,7 +86,20 @@ def logout():
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    return render_template("main.html")
+    stream = models.Post.select().limit(100)
+    return render_template("stream.html", stream=stream)
+
+
+@app.route('/new_post', methods=('GET', 'POST'))
+@login_required
+def post():
+    form = forms.PostForm()
+    if form.validate_on_submit():
+        models.Post.create(user=g.user._get_current_object(),
+                           content=form.content.data.strip())
+        flash("Message posted! Thanks!", "success")
+        return redirect(url_for('index'))
+    return render_template('post.html', form=form)
 
 
 @app.route('/stream')
