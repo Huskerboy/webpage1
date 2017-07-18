@@ -34,22 +34,14 @@ $(document).ready(function() {
     $('.btn-guess-color').on("click", function(e){
         e.preventDefault();
         var this_guess = $(this).val();
+        var this_route = $(this).data('route');
         $.ajax({
             method: "POST",
             url: "/first_step",
             contentType:"application/json; charset=utf-8",
             data: JSON.stringify({"guess_color": this_guess}),
         }).done(function( msg ) {
-            if (msg === 'True') {
-                $(div#back_card1).remove();
-                $(div#abe).addClass('playingCards').addClass('faceImages');
-                $(div#readout1).text('You drew a ' + data.face.name + ' of ' + data.suit.name);
-                $(div#first_card).addClass(data.face.style_rank).addClass(data.suit.style_name);
-                $(span#span1).addClass('rank').text(data.face.symbol);
-                $(span#span2).addClass('suit').html('&' + data.suit.style_name + ';');
-            } else {
-                alert( msg );
-            }
+            alert ( msg )
         });
     });
     $('.btn-guess-hl').on("click", function(e){

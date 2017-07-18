@@ -344,9 +344,9 @@ def first_step():
     first_card = draw_card()
     if 'guess_color' in userdata:
         if userdata['guess_color'] == first_card['suit']['color']:
-            return 'True'
+            return 'Correct, Your guess was {} and the card was a {} of {}'.format(userdata['guess_color'], first_card['face']['name'], first_card['suit']['name'])
         else:
-            return 'False'
+            return 'Wrong, Your guess was {} and the card was a {} of {}'.format(userdata['guess_color'], first_card['face']['name'], first_card['suit']['name'])
     return "Bad request you dummy"
 
 
