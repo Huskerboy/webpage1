@@ -331,7 +331,7 @@ def test():
     userdata = request.get_json()
     first_card = draw_card()
     if 'guess_color' in userdata:
-        if 'guess_color' == first_card['suit']['color']:
+        if userdata['guess_color'] == first_card['suit']['color']:
             return 'Correct, Your guess was {} and the card was a {} of {}'.format(userdata['guess_color'], first_card['face']['name'], first_card['suit']['name'])
         else:
             return 'Wrong, Your guess was {} and the card was a {} of {}'.format(userdata['guess_color'], first_card['face']['name'], first_card['suit']['name'])
@@ -343,10 +343,10 @@ def first_step():
     userdata = request.get_json()
     first_card = draw_card()
     if 'guess_color' in userdata:
-        if 'guess_color' == first_card['suit']['color']:
-            return 'Correct, Your guess was {} and the card was {}'.format(userdata['guess_color'], first_card['suit']['color'])
+        if userdata['guess_color'] == first_card['suit']['color']:
+            return 'True'
         else:
-            return 'Wrong, Your guess was {} and the card was {}'.format(userdata['guess_color'], first_card['suit']['color'])
+            return 'False'
     return "Bad request you dummy"
 
 

@@ -163,8 +163,8 @@ textarea:focus {
   color: #2C3238;
 }
 button {
-  padding: 10px 0;
-  margin: -10px 3px -18px;
+  padding: 8px 8px;
+  margin: 1px;
   text-align: center;
   background: #6ECDF7;
   color: #fff;
