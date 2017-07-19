@@ -342,11 +342,12 @@ def test():
 def first_step():
     userdata = request.get_json()
     first_card = draw_card()
-    if 'guess_color' in userdata:
-        if userdata['guess_color'] == first_card['suit']['color']:
-            return 'Correct, Your guess was {} and the card was a {} of {}'.format(userdata['guess_color'], first_card['face']['name'], first_card['suit']['name'])
+    if 'guess' in userdata:
+        if userdata['guess'] == first_card['suit']['color']:
+            card = {'value': 'True', 'card_num': first_card}
+            return jsonify(card)
         else:
-            return 'Wrong, Your guess was {} and the card was a {} of {}'.format(userdata['guess_color'], first_card['face']['name'], first_card['suit']['name'])
+            return 'False'
     return "Bad request you dummy"
 
 

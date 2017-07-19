@@ -31,31 +31,42 @@ $(document).ready(function() {
     });
 
     **/
-    $('.btn-guess-color').on("click", function(e){
+    $('.btn-guess-hl').on("click", function(e){
+        e.preventDefault();
+        var this_guess = $(this).val();
+        $.ajax({
+            method: "POST",
+            url: "/test_route",
+            contentType:"application/json; charset=utf-8",
+            data: JSON.stringify({"guess_color": this_guess}),
+        }).done(function( msg ) {
+            alert( msg );
+        });
+    });
+    $('.btn-guess').on("click", function(e){
         e.preventDefault();
         var this_guess = $(this).val();
         var this_route = $(this).data('route');
         $.ajax({
             method: "POST",
-            url: "/first_step",
+            url: this_route,
             contentType:"application/json; charset=utf-8",
-            data: JSON.stringify({"guess_color": this_guess}),
-        }).done(function( msg ) {
-            alert ( msg )
+            data: JSON.stringify({"guess": this_guess}),
+        }).done(function( card ) {
+            if (card["value"] === 'True') {
+                assemble('div#back_card1', card['first_card.suit.style_name'], card['first_card.face.style_rank'])
+            } else {
+                alert ('False')
+            }
         });
     });
-    $('.btn-guess-hl').on("click", function(e){
-    e.preventDefault();
-    var this_guess = $(this).val();
-    $.ajax({
-        method: "POST",
-        url: "/test_route",
-        contentType:"application/json; charset=utf-8",
-        data: JSON.stringify({"guess_color": this_guess}),
-    }).done(function( msg ) {
-        alert( msg );
-        });
-    });
+    function assemble (back_card, style_name, style_rank) {
+        $(back_card).remove();
+        $('div#abe').addClass('playingCards').addClass('faceImages');
+        $('div#first_card').addClass(style_rank).addClass(style_name); //data.suit.style_name
+        $('span#span1').addClass('rank').text(first_card.face.symbol);
+        $('span#span2').addClass('suit').html('&' + style_name + ';');
+    }
 });
     /**
     $('.btn-guess-hl').on("click", function(e){
