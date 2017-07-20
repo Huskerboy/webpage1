@@ -344,8 +344,8 @@ def first_step():
     first_card = draw_card()
     if 'guess' in userdata:
         if userdata['guess'] == first_card['suit']['color']:
-            card = {'value': 'True', 'card_num': first_card}
-            return jsonify(card)
+            score_card = {'value': 'True', 'card': first_card}
+            return jsonify(score_card)
         else:
             return 'False'
     return "Bad request you dummy"
