@@ -55,17 +55,17 @@ $(document).ready(function() {
         }).done(function( score_card ) {
             // console.log( score_card )
             if (score_card["value"] === 'True') {
-                assemble('div#back_card1', score_card['card']['suit']['style_name'], score_card['card']['face']['style_rank']);
+                assemble('div#back_card1', score_card['card']);
             } else {
                 alert ('False');
             }
         });
     });
-    function assemble (back_card, style_name, style_rank) {
-        $(back_card).remove();
+    function assemble (card_element, card) {
+        $(card_element).remove();
         $('div#abe').addClass('playingCards').addClass('faceImages');
-        $('div#first_card').addClass(style_rank).addClass(style_name); //data.suit.style_name
-        $('span#span1').addClass('rank').text(score_card.card.face.symbol);
+        $('div#first_card').addClass(card.face.style_rank).addClass(card.suit.style_name); //data.suit.style_name
+        $('span#span1').addClass('rank').text(card.face.symbol);
         $('span#span2').addClass('suit').html('&' + style_name + ';');
     }
 });
