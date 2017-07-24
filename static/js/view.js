@@ -36,9 +36,9 @@ $(document).ready(function() {
     function assemble (this_parent, score_card) {
         this_parent.children('div.back_card').remove();
         this_parent.children('div.card_front').addClass('playingCards').addClass('faceImages');
-        this_parent.children('div div.display').addClass(score_card.face.style_rank).addClass(score_card.suit.style_name);
-        this_parent.children('div span.rank').text(score_card.face.symbol);
-        this_parent.children('div span.suit').html('&' + score_card.suit.style_name + ';');
+        this_parent.find('div.display').addClass(score_card['face']['style_rank']).addClass(score_card['suit']['style_name']);
+        this_parent.find('span.rank').text(score_card['face']['symbol']);
+        this_parent.find('span.suit').html('&' + score_card.suit.style_name + ';');
     }
 });
     /**
