@@ -17,6 +17,7 @@ $(document).ready(function() {
         e.preventDefault();
         var this_guess = $(this).val();
         var this_route = $(this).data('route');
+        var this_parent = $(this).parent();;
         $.ajax({
             method: "POST",
             url: this_route,
@@ -25,21 +26,29 @@ $(document).ready(function() {
         }).done(function( score_card ) {
             // console.log( score_card )
             if (score_card["value"] === 'True') {
-                assemble('div#back_card1', score_card['card']);
+                assemble(this_parent, score_card['card']);
             } else {
                 alert ('False');
             }
         });
     });
-    function assemble (card_element, card) {
-        $(card_element).remove();
+
+    function assemble (this_parent, score_card) {
+        this_parent.children('div.back_card').remove();
+        this_parent.children('div.card_front').addClass('playingCards').addClass('faceImages');
+        this_parent.children('div div.display').addClass(score_card.face.style_rank).addClass(score_card.suit.style_name);
+        this_parent.children('div span.rank').text(score_card.face.symbol);
+        this_parent.children('div span.suit').html('&' + score_card.suit.style_name + ';');
+    }
+});
+    /**
+        function assemble (first_section) {
+        $(back_card).remove();
         $('div#abe').addClass('playingCards').addClass('faceImages');
         $('div#first_card').addClass(card.face.style_rank).addClass(card.suit.style_name);
         $('span#span1').addClass('rank').text(card.face.symbol);
         $('span#span2').addClass('suit').html('&' + style_name + ';');
     }
-});
-    /**
     $('.btn-guess-hl').on("click", function(e){
         e.preventDefault();
         var this_guess = $(this).val();

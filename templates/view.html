@@ -5,23 +5,20 @@
 <div class="row">
     <div class="col-md-12">
         <div class="card-row">
-            <div class="wrapper">
-                <div id="abe">
-                    <div id="first_card" class="card">
-                        <span id="span1"></span>
-                        <span id="span2"></span>
+            <div id="first_section" class="wrapper">
+                <div id="abe" class="card_front">
+                    <div id="first_card" class="display card">
+                        <span class="rank"></span>
+                        <span class="suit"></span>
                     </div>
                 </div>
-                <div id="back_card1" class="card">
+                <div id="back_card1" class="back_card card">
                     <div class="playingCards">
                         <div class="card back">*</div>
                     </div>
                 </div>
-                    <button value='black' data-route="/first_step" type="button" id="black" class="btn my-btn btn-guess">Black</button>
-                    <button value='red' data-route="/first_step" type="button" id="red" class="btn btn-danger btn-guess">Red</button>
-                <div id="readout1">
-                    <p></p>
-                </div>
+                <button value='black' data-route="/first_step" type="button" id="black" class="btn my-btn btn-guess">Black</button>
+                <button value='red' data-route="/first_step" type="button" id="red" class="btn btn-danger btn-guess">Red</button>
             </div>
             <div class="wrapper">
                 <div class="playingCards">
@@ -29,9 +26,6 @@
                         <span class="rank">7</span>
                         <span class="suit">&spades;</span>
                     </div>
-                </div>
-                <div id="readout1">
-                    <p></p>
                 </div>
             </div>
         </div>
@@ -68,8 +62,8 @@
                         <div class="card back">*</div>
                     </div>
                 </div>
-                    <button value="high" data-route="/first_step" type="button" id="high" class="btn-guess btn btn-primary">High</button>
-                    <button value="low" data-route="/first_step" type="button" id="low" class="btn-guess btn btn-danger">Low</button>
+                    <button value="high" data-route="/second_step" type="button" id="high" class="btn-guess btn btn-primary">High</button>
+                    <button value="low" data-route="/second_step" type="button" id="low" class="btn-guess btn btn-danger">Low</button>
                 <div id="readout2">
                     <p></p>
                 </div>
