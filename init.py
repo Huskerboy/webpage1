@@ -175,7 +175,6 @@ def resume():
     return render_template('view.html')
 
 
-# @app.route('/_draw_card', methods=['GET', 'POST'])
 def draw_card():
     suits = _get_suits()
     faces = _get_faces()
@@ -342,6 +341,7 @@ def test():
 def first_step():
     userdata = request.get_json()
     first_card = draw_card()
+    session['first_card'] = first_card
     if 'guess' in userdata:
         if userdata['guess'] == first_card['suit']['color']:
             score_card = {'value': 'True', 'card': first_card}
@@ -352,23 +352,68 @@ def first_step():
 
 
 @app.route('/second_step', methods=['GET', 'POST'])
-def second_step(first_card):
+def second_step():
+    userdata = request.get_json()
     second_card = draw_card()
-    if guess_high_low == 'high':
-        if second_card['face']['rank'] > first_card['face']['rank']:
-            third_step(first_card, second_card)
-        elif second_card['face']['rank'] == first_card['face']['rank']:
-            first_step()
-        else:
-            first_step()
+    session['second_card'] = second_card
+    if 'first_card' in session:
+        first_card = session.get('first_card')
+        if 'guess' in userdata:
+            if userdata['guess'] == 'high':
+                if second_card['face']['rank'] > first_card['face']['rank']:
+                    score_card = {'value': 'True', 'card': second_card}
+                    return jsonify(score_card)
+                else:
+                    return 'False'
+            elif userdata['guess'] == 'low':
+                if second_card['face']['rank'] < first_card['face']['rank']:
+                    score_card = {'value': 'True', 'card': second_card}
+                    return jsonify(score_card)
+            else:
+                return "Error with the guess"
+        return "Bad request, the seven kingdoms are disappointed."
+    return "First card not in session"
 
-    elif guess_high_low == 'low':
-        if second_card['face']['rank'] < first_card['face']['rank']:
-            third_step(first_card, second_card)
-        elif second_card['face']['rank'] == first_card['face']['rank']:
-            first_step()
+
+@app.route('/third_step', methods=['GET', 'POST'])
+def third_step():
+    userdata = request.get_json()
+    third_card = draw_card()
+    session['third_card'] = third_card
+    if 'second_card' in session:
+        second_card = session.get('second_card')
+        first_card = session.get('first_card')
+        top = max(first_card['face']['rank'], second_card['face']['rank'])
+        bottom = min(first_card['face']['rank'], second_card['face']['rank'])
+        if 'guess' in userdata:
+            if userdata['guess'] == 'inside':
+                if top > third_card['face']['rank'] > bottom:
+                    score_card = {'value': 'True', 'card': third_card}
+                    return jsonify(score_card)
+                else:
+                    return 'False'
+            elif userdata['guess'] == 'outside':
+                if top < third_card['face']['rank'] or third_card['face']['rank'] < bottom:
+                    score_card = {'value': 'True', 'card': third_card}
+                    return jsonify(score_card)
+            else:
+                return 'False'
+        return "Bad request, the seven kingdoms are disappointed."
+    return "Second card not in session"
+
+
+@app.route('/fourth_step', methods=['GET', 'POST'])
+def fourth_step():
+    userdata = request.get_json()
+    fourth_card = draw_card()
+    session['fourth_card'] = fourth_card
+    if 'guess' in userdata:
+        if userdata['guess'] == fourth_card['suit']['name']:
+            score_card = {'value': 'True', 'card': fourth_card}
+            return jsonify(score_card)
         else:
-            first_step()
+            return 'Not the right suit'
+    return "Bad request, the seven kingdoms are disappointed."
 
 
 @app.route('/view_card', methods=['GET', 'POST'])
