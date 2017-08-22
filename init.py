@@ -347,7 +347,8 @@ def first_step():
             score_card = {'value': 'True', 'card': first_card}
             return jsonify(score_card)
         else:
-            return 'False'
+            score_card = {'value': 'False', 'card': first_card}
+            return jsonify(score_card)
     return "Bad request you dummy"
 
 
@@ -364,10 +365,14 @@ def second_step():
                     score_card = {'value': 'True', 'card': second_card}
                     return jsonify(score_card)
                 else:
-                    return 'False'
+                    score_card = {'value': 'False', 'card': first_card}
+                    return jsonify(score_card)
             elif userdata['guess'] == 'low':
                 if second_card['face']['rank'] < first_card['face']['rank']:
                     score_card = {'value': 'True', 'card': second_card}
+                    return jsonify(score_card)
+                else:
+                    score_card = {'value': 'False', 'card': first_card}
                     return jsonify(score_card)
             else:
                 return "Error with the guess"
@@ -391,9 +396,13 @@ def third_step():
                     score_card = {'value': 'True', 'card': third_card}
                     return jsonify(score_card)
                 else:
-                    return 'False'
+                    score_card = {'value': 'True', 'card': third_card}
+                    return jsonify(score_card)
             elif userdata['guess'] == 'outside':
                 if top < third_card['face']['rank'] or third_card['face']['rank'] < bottom:
+                    score_card = {'value': 'True', 'card': third_card}
+                    return jsonify(score_card)
+                else:
                     score_card = {'value': 'True', 'card': third_card}
                     return jsonify(score_card)
             else:
@@ -412,7 +421,8 @@ def fourth_step():
             score_card = {'value': 'True', 'card': fourth_card}
             return jsonify(score_card)
         else:
-            return 'Not the right suit'
+            score_card = {'value': 'True', 'card': fourth_card}
+            return jsonify(score_card)
     return "Bad request, the seven kingdoms are disappointed."
 
 

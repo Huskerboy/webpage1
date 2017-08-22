@@ -25,12 +25,12 @@ $(document).ready(function() {
             contentType:"application/json; charset=utf-8",
             data: JSON.stringify({"guess": this_guess}),
         }).done(function( score_card ) {
-            // console.log( score_card )
+            console.log( score_card )
             // window.game.prev_card = score_card;
             if (score_card["value"] === 'True') {
                 assemble(this_parent, score_card['card']);
             } else {
-                alert ('False');
+                alert ( "The card was a " + score_card['card']['face']['name'] + " of " + score_card['card']['suit']['name'] );
             }
         });
     });
