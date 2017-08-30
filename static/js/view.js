@@ -1,6 +1,6 @@
 $(document).ready(function() {
 // creating a function that will build on DRY principals to make the AJAX call simpler and so I don't have to do it a ton of times.
-
+    window.game = [];
     $('.btn-guess-hl').on("click", function(e){
         e.preventDefault();
         var this_guess = $(this).val();
@@ -18,7 +18,6 @@ $(document).ready(function() {
         var this_guess = $(this).val();
         var this_route = $(this).data('route');
         var this_parent = $(this).parent();;
-        // var prev_card = window.game.prev_card || null;
         $.ajax({
             method: "POST",
             url: this_route,
@@ -26,7 +25,7 @@ $(document).ready(function() {
             data: JSON.stringify({"guess": this_guess}),
         }).done(function( score_card ) {
             console.log( score_card )
-            // window.game.prev_card = score_card;
+            window.game.prev_card = score_card;
             if (score_card["value"] === 'True') {
                 assemble(this_parent, score_card['card']);
             } else {
